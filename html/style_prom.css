@@ -1,0 +1,100 @@
+#parameters{
+	border: 1px solid red;
+	width: 100%;
+	height:800px;
+}
+#blok1 {
+	border: 1px solid red;
+	width: 450px;
+	height: 780px;
+	float: left;
+}
+.schema
+	.size{position:absolute;}
+	.size-w{left:210px;top:78px;}
+	.size-h{left:7px;top:253px;}
+	input[type="text"]{width:45px;height:14px;font-size:14px;font-weight:bold;text-align:center;padding:4px 0;background:#fff;border-color:#a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;border-style:solid;border-width:1px;}
+
+
+#blok1 
+.type-els{display:block;}
+#blok1 
+.type-els>li{background:none;display:inline-block;margin:0 10px 10px 0;padding-left:25px;vertical-align:top;position:relative;cursor:pointer;font-size:12px;}
+#blok1 
+.type-els>li .pic{margin-right:20px;}#calculator .type-els .radio{bottom:6px;top:auto;}#calculator .type-els li.two_lines .radio{bottom:33px;}
+#blok1 
+.type-els li.two_lines i{font-size:10px;top:-10px;position:relative;}
+
+
+#kp{
+	border: 1px solid red;
+	width: 100%;
+	height:800px;
+}
+
+
+#blok2 
+.type-els{display:block;}
+#blok2 
+.type-els>li{background:none;display:inline-block;margin:0 10px 10px 0;vertical-align:top;position:relative;cursor:pointer;font-size:12px;}
+#blok2 
+.type-els>li .pic{margin-right:20px;}#calculator .type-els .radio{bottom:6px;top:auto;}#calculator .type-els li.two_lines .radio{bottom:33px;}
+#blok2 
+.type-els li.two_lines i{font-size:10px;top:-10px;position:relative;}
+
+
+#blok1 h2 {
+	color: #d60b52;
+	text-align: left;
+	margin: 15px 0 23px;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 3px;
+}
+
+#blok2 h2 {
+	color: #d60b52;
+	text-align: left;
+	margin: 15px 0 23px;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 3px;
+}
+
+#blok3 h2 {
+	color: #d60b52;
+	text-align: left;
+	margin: 15px 0 23px;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 3px;
+}
+.winqty p {
+		float: left;
+	margin: 0 15px 10px 0;
+}
+
+#polcolor{
+	margin:0px 60px;
+}
+
+#poltype{
+	margin:0px 60px;
+}
+
+
+#blok2 {
+	border: 1px solid red;
+	width: 250px;
+	height: 780px;
+	float: left;
+}
+#blok3 {
+	border: 1px solid red;
+	width: 210px;
+	height: 780px;
+	float: left;
+}
+#blok4 {
+	border: 1px solid red;
+	width: 300px;
+	height: 780px;
+	float: left;
+}
