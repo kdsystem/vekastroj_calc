@@ -1,4 +1,5 @@
 <?php
+$debug=false;
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
@@ -391,38 +392,39 @@ echo '</tr>';
 echo '</table>';
 echo "<br>";
 
-
-echo"Высота =".$height;
-echo "<br>";
-echo"Ширина =".$width;
-echo "<br>";
-echo 'цвет ='.$selected_color;
-echo "<br>";
-echo 'полотно '.$poltype;
-echo "<br>";
-echo 'aqua ='.$aqua;
-echo "<br>";
-echo"Монтаж =".$montazh;
-echo "<br>";
-echo"Доставка =".$dostavka;
-echo "<br>";
-echo"км =".$km;
-echo "<br>";
-echo"Управление =".$upr;
-echo "<br>";
-echo"Тип установки =".$mtype;
-echo "<br>";
-//echo"Антикор =".$antikor;
-//echo "<br>";
-echo"Редуктор =".$reductor;
-echo "<br>";
-echo"Замок =".$zamok;
-echo "<br>";
-echo"Окна =".$windows;
-echo "<br>";
-echo"Калитка =".$door;
-
-//echo "Ширина =" . $csvdata [2];
-//echo "<br>";
-//echo "Высота =" . $csvdata [3];
+if (debug){
+	echo"Высота =".$height;
+	echo "<br>";
+	echo"Ширина =".$width;
+	echo "<br>";
+	echo 'цвет ='.$selected_color;
+	echo "<br>";
+	echo 'полотно '.$poltype;
+	echo "<br>";
+	echo 'aqua ='.$aqua;
+	echo "<br>";
+	echo"Монтаж =".$montazh;
+	echo "<br>";
+	echo"Доставка =".$dostavka;
+	echo "<br>";
+	echo"км =".$km;
+	echo "<br>";
+	echo"Управление =".$upr;
+	echo "<br>";
+	echo"Тип установки =".$mtype;
+	echo "<br>";
+	//echo"Антикор =".$antikor;
+	//echo "<br>";
+	echo"Редуктор =".$reductor;
+	echo "<br>";
+	echo"Замок =".$zamok;
+	echo "<br>";
+	echo"Окна =".$windows;
+	echo "<br>";
+	echo"Калитка =".$door;
+	
+	//echo "Ширина =" . $csvdata [2];
+	//echo "<br>";
+	//echo "Высота =" . $csvdata [3];
+}
 ?>
