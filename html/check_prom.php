@@ -107,10 +107,16 @@ $price_reductor=0;
 
 if ($maintype="proplus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
+	if ($door != "none") {
+		$price_door = 32860;
+	}
 }
 else{
 	//protrend
 	$yourcsvfile = "vor_prom_protrend.csv";
+	if ($door != "none") {
+		$price_door = 26576;
+	}
 }
 
 $csvdata = csv_in_array( $yourcsvfile, ";", "\"", false, $width, $height);
@@ -146,7 +152,7 @@ if ($dostavka<>"none"){
 	}
 }
 
-if ($reductor!="none"){
+if ($reductor != "none"){
 	$price_reductor=6517;
 }
 
@@ -167,101 +173,34 @@ if ($csx=="csx5"){
 	$price_csx_text="Телескопическое подвешение типа CS-5";
 }
 
-
-if ($door != "none") {
-	$price_door = 32860;
-	// $price=$price+32860;
+if ($windows !=0){
+	$price_windows=$windows*4147;
 }
 
-if ($door<>"none"){
-	$multi=false;
-	//$price=0;
-	$wid=$csvdata[2];
-	$heig=$csvdata[3];
-	if ($type=="classic"){
-		//CLASSIC TYPE
-		if (($heig>=1960) and ($heig<2085)){
-			if (($wid>1875) and ($wid<3625)){$multi=true;}
-		}
-		if (($heig>=2085) and ($heig<2210)){
-			if (($wid>1750) and ($wid<3625)){$multi=true;}
-		}
-		if (($heig>=2210) and ($heig<2335)){
-			if (($wid>1749) and ($wid<3625)){$multi=true;}
-		}
-		if (($heig>=2335) and ($heig<2460)){
-			if (($wid>1749) and ($wid<3500)){$multi=true;}
-		}
-		if (($heig>=2460) and ($heig<2585)){
-			if (($wid>1749) and ($wid<3375)){$multi=true;}
-		}
-		if (($heig>=2585) and ($heig<2710)){
-			if (($wid>1749) and ($wid<3250)){$multi=true;}
-		}
-		if (($heig>=2710) and ($heig<2835)){
-			if (($wid>1749) and ($wid<3125)){$multi=true;}
-		}
-		if (($heig>=2835) and ($heig<2960)){
-			if (($wid>1749) and ($wid<2875)){$multi=true;}
-		}
-		if (($heig>=2960) and ($heig<3085)){
-			if (($wid>1749) and ($wid<2750)){$multi=true;}
-		}
-		if ($heig=3085){
-			if (($wid>1749) and ($wid<2625)){$multi=true;}
-		}
-	}
-	else {
-		//TREND TYPE
-		if (($heig>=1875) and ($heig<2000)){
-			if (($wid > 1875) and ($wid < 3625)) {$multi = true;}
-		}
-		if (($heig>=2000) and ($heig<2125)){
-			if (($wid > 1750) and ($wid < 3625)) {$multi = true;}
-		}
-		if (($heig>=2125) and ($heig<2250)){
-			if (($wid > 1749) and ($wid < 3500)) {$multi = true;}
-		}
-		if (($heig>=2250) and ($heig<2375)){
-			if (($wid > 1749) and ($wid < 3375)) {$multi = true;}
-		}
-		if (($heig>=2375) and ($heig<2500)){
-			if (($wid > 1749) and ($wid < 3250)) {$multi = true;}
-		}
-		if (($heig>=2500) and ($heig<3125)){
-			if (($wid>1749) and ($wid<3000)){$multi=true;}
-		}
-		if (($heig>=2750) and ($heig<2875)){
-			if (($wid>1749) and ($wid<2875)){$multi=true;}
-		}
-		if (($heig>=2875) and ($heig<3000)){
-			if (($wid>1749) and ($wid<2750)){$multi=true;}
-		}
-		if ($heig=3000){
-			if (($wid>1749) and ($wid<2625)){$multi=true;}
-		}
-	}
-}
 //if ($multi) {$price_multi=$csvdata[4]*1.05;}
 if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.05;}
 else {$price=$csvdata[4];}
 
 if ($mtype="mtype_1") {$price_mtype=0;
 $mtype_text="стандартный монтаж";};
-if ($mtype="mtype_2") {$price_mtype=$csvdata[4]*0.07;
-$mtype_text="Наклонный монтаж (до 45°)";};
-if ($mtype="mtype_3") {$price_mtype=$csvdata[4]*0.1;
-$mtype_text="Высокий монтаж с нижним расположением вала";};
-if ($mtype="mtype_4") {$price_mtype=$csvdata[4]*0.8;
-$mtype_text="Высокий монтаж с верхним расположением вала";};
-if ($mtype="mtype_5") {$price_mtype=$csvdata[4]*0.06;
-$mtype_text="Низкий мотаж (барабан сзади)";};
-if ($mtype="mtype_6") {$price_mtype=$csvdata[4]*0.06;
-$mtype_text="Наклонный низкий монтаж (до 45°)";};
-if ($mtype="mtype_7") {$price_mtype=$csvdata[4]*0.1;
-$mtype_text="Вертикальный монтаж с верхним расположением вала";};
+if ($mtype="mtype_2") {$price_mtype=$csvdata[4]*0.06;
+$mtype_text="низкий мотаж (барабан сзади)";};
+if ($mtype="mtype_3") {$price_mtype=$csvdata[4]*0.07;
+$mtype_text="наклонный монтаж (до 45°)";};
+if ($mtype="mtype_4") {$price_mtype=$csvdata[4]*0.08;
+$mtype_text="наклонный низкий монтаж (до 45°)";};
+if ($mtype="mtype_5") {$price_mtype=$csvdata[4]*0.1;
+$mtype_text="наклонный высокий с верхним расположением вала (до 45°)";};
+if ($mtype="mtype_6") {$price_mtype=$csvdata[4]*0.1;
+$mtype_text="наклонный высокий с нижним расположением вала (до 45°)";};
+if ($mtype="mtype_7") {$price_mtype=$csvdata[4]*0.08;
+$mtype_text="высокий монтаж с верхним расположением вала";};
 if ($mtype="mtype_8") {$price_mtype=$csvdata[4]*0.1;
-$mtype_text="Вертикальный монтаж с нижним расположением вала";};
+$mtype_text="высокий монтаж с нижним расположением вала";};
+if ($mtype="mtype_9") {$price_mtype=$csvdata[4]*0.1;
+$mtype_text="вертикальный монтаж с верхним расположением вала";};
+if ($mtype="mtype_10") {$price_mtype=$csvdata[4]*0.1;
+$mtype_text="вертикальный монтаж с нижним расположением вала";};
 
 echo "<br>";
 $orderNumber=uniqid();

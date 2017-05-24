@@ -182,31 +182,19 @@
 		<div>
 			<h2>Тип монтажа</h2>
 			<p>
-				<input type="radio" name="mtype" id="mtype_1" value="1" checked="checked" /> <label>стандартный монтаж</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_2" value="2" /> <label>наклонный монтаж</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_3" value="3" /> <label>высокий монтаж с нижним<br /> расположением вала
-				</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_4" value="4" /> <label>высокий монтаж верхним<br /> расположением вала
-				</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_5" value="5" /> <label>низкий монтаж</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_6" value="6" /> <label>наклонный низкий монтаж</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_7" value="7" /> <label>наклонный высокий монтаж</label>
-			</p>
-			<p>
-				<input type="radio" name="mtype" id="mtype_8" value="8" /> <label>вертикальный монтаж</label>
-			</p>
+				<select size="1" style="width:200px" id="mtype">
+			    	<option selected value="mtype_1">стандартный монтаж</option>
+			    	<option selected value="mtype_2">низкий монтаж (барабан сзади)</option>
+			    	<option selected value="mtype_3">наклонный монтаж (до 45°)</option>
+			    	<option selected value="mtype_4">наклонный низкий монтаж (до 45°)</option>
+			    	<option selected value="mtype_5">наклонный высокий с верхним расположением вала (до 45°)</option>
+			    	<option selected value="mtype_6">наклонный высокий с нижним расположением вала (до 45°)</option>
+			    	<option selected value="mtype_7">высокий монтаж с верхним расположением вала</option>
+			    	<option selected value="mtype_8">высокий монтаж с нижним расположением вала</option>
+			    	<option selected value="mtype_9">вертикальный монтаж с верхним расположением вала</option>
+			    	<option selected value="mtype_10">вертикальный монтаж с нижним расположением вала</option>
+			    </select>
+			</p>			
 		</div>
 
 		<h2>Доставка / монтаж</h2>
@@ -259,16 +247,10 @@
 			//alert(poltype);
 
 			var mtype="";
-			if (document.getElementById("mtype_1").checked ) { mtype="mtype_1";}
-			if (document.getElementById("mtype_2").checked ) { mtype="mtype_2";}
-			if (document.getElementById("mtype_3").checked ) { mtype="mtype_3";}
-			if (document.getElementById("mtype_4").checked ) { mtype="mtype_4";}
-			if (document.getElementById("mtype_5").checked ) { mtype="mtype_5";}
-			if (document.getElementById("mtype_6").checked ) { mtype="mtype_6";}
-			if (document.getElementById("mtype_7").checked ) { mtype="mtype_7";}
-			if (document.getElementById("mtype_8").checked ) { mtype="mtype_8";}
+			mtype=document.getElementById("mtype").value;
+			alert(mtype);
+			
 			var montazh="none";
-			//alert(montazh);
 			if (document.getElementById("montazh").checked ) { montazh="yes";}
 			var dostavka="none";
 			if (document.getElementById("delivery").checked ) { 
@@ -281,6 +263,7 @@
 					} 				
 			}
 			var upr="none";
+			var reductor="none";
 			if (document.getElementById("manual").checked ) {upr="manual"};
 			if (document.getElementById("reductor").checked ) {upr="reductor"};
 			if (document.getElementById("automatic").checked ) { 
