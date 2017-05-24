@@ -248,7 +248,7 @@
 
 			var mtype="";
 			mtype=document.getElementById("mtype").value;
-			alert(mtype);
+			//alert(mtype);
 			
 			var montazh="none";
 			if (document.getElementById("montazh").checked ) { montazh="yes";}
