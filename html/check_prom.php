@@ -1,5 +1,5 @@
 <?php
-$debug=false;
+$debugging=false;
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
@@ -92,7 +92,10 @@ $door = $_REQUEST['kalitka'];
 $reductor= $_REQUEST['reductor'];
 $csx=$_REQUEST['csx'];
 $aqua=$_REQUEST['aqua'];
+$springs=$_REQUEST['springs'];
+$poddom=$_REQUEST['poddom'];
 $price=0;
+$price_poddom=0;
 $price_csx=0;
 $price_door=0;
 $price_aqua=0;
@@ -104,6 +107,8 @@ $price_multi=0;
 $price_mounttype=0;
 $price_csx_text="";
 $price_reductor=0;
+$price_springs=0;
+$txt_springs="";
 
 
 if ($maintype="proplus"){
@@ -142,6 +147,7 @@ if ($upr == "automatic") {
 		$price_automatic=28100;
 		$price_automatic_text="ASI100KIT Электропривод с цепью ручного управления и набором кабелей, внешний блок управления CUID-230, монтажный комплект.";
 	}
+	if ($poddom !='none') {$price_poddom=1274;};
 }
 
 if ($dostavka<>"none"){
@@ -153,7 +159,7 @@ if ($dostavka<>"none"){
 	}
 }
 
-if ($reductor != "none"){
+if ($upr == "reductor"){
 	$price_reductor=6517;
 }
 
@@ -203,6 +209,16 @@ $mtype_text="вертикальный монтаж с верхним распо�
 if ($mtype="mtype_10") {$price_mtype=$csvdata[4]*0.1;
 $mtype_text="вертикальный монтаж с нижним расположением вала";};
 
+if ($springs==0) { $txt_springs='стандартные торсионные пружины на 25000 циклов';};
+if ($springs==1) { $txt_springs='усиленные торсионные пружины на 35000 циклов';
+$price_springs=$csvdata[4]*0.03;};
+if ($springs==2) { $txt_springs='усиленные торсионные пружины на 50000 циклов';
+$price_springs=$csvdata[4]*0.04;};
+if ($springs==3) { $txt_springs='усиленные торсионные пружины на 75000 циклов';
+$price_springs=$csvdata[4]*0.06;};
+if ($springs==4) { $txt_springs='усиленные торсионные пружины на 100000 циклов';
+$price_springs=$csvdata[4]*0.08;};
+
 echo "<br>";
 $orderNumber=uniqid();
 
@@ -221,6 +237,8 @@ echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."�
 echo "<br>";
 echo '(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color.",";
+if ($springs==0 )
+{echo $txt_springs;}
 echo '<td>';
 //echo $csvdata[4].' руб.';
 echo $price.' руб.';
@@ -236,6 +254,16 @@ echo $price_mtype.' руб.';
 echo '</td>';
 echo '</tr>';
 
+if ($springs !=0) {
+	echo '<tr>';
+	echo '<td>';
+	echo $txt_springs;
+	echo '</td>';
+	echo '<td>';
+	echo $price_springs.' руб.';
+	echo '</td>';
+	echo '</tr>';
+}
 
 
 if ($door=="door_std") {
@@ -354,10 +382,22 @@ if ($upr == "automatic") {
 		echo '</td>';
 	}
 	echo '</tr>';
+	
+	if ($poddom !="none") {
+		echo '<tr>';
+		echo '<td>';
+		echo 'Система защиты от поддомкрачивания (устанавливается на промышленные секционные ворота с навальным электроприводом. ';
+		echo '<br>';
+		echo 'При ширине проема ворот до 5 м и площади до 25 м² в состав опции входят кронштейны с регулировкой натяжения тросов)';
+		echo '</td>';
+		echo '<td>';
+		echo $price_poddom.' руб.';
+		echo '</td>';
+		echo '</tr>';
+	}
 }
 
-
-if ($reductor !="none") {
+if ($upr == "reductor") {
 	echo '<tr>';
 	echo '<td>';
 	echo "Редуктор цепной";
@@ -386,13 +426,13 @@ echo '<td>';
 echo 'Итого';
 echo '<t/d>';
 echo '<td>';
-echo $price+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
+echo $price+$price_poddom+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
 echo '<t/d>';
 echo '</tr>';
 echo '</table>';
 echo "<br>";
 
-if (debug){
+if ($debugging){
 	echo"Высота =".$height;
 	echo "<br>";
 	echo"Ширина =".$width;
@@ -422,6 +462,13 @@ if (debug){
 	echo"Окна =".$windows;
 	echo "<br>";
 	echo"Калитка =".$door;
+	
+	echo "<br>";
+	echo"springs =".$springs;
+	
+	echo "<br>";
+	echo"csx =".$csx;
+	
 	
 	//echo "Ширина =" . $csvdata [2];
 	//echo "<br>";
