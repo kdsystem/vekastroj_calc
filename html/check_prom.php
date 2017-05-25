@@ -1,5 +1,6 @@
 <?php
 $debugging=false;
+//ну тут всё ясно
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
