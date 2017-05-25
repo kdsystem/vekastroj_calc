@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
-	type="text/javascript"></script>
+	type="text/javascript">
+</script>
 <link rel="stylesheet" type="text/css" href="style_prom.css">
 <title>Калькулятор"</title>
 </head>
@@ -59,22 +60,17 @@
 
 		<div class="b-springs">
 			<p>
-				<input type="checkbox" name="tors" value="" /> <label>Торсионные
-					пружины</label>
-			</p>
-			<ul class="type-els ">
-				<li><input type="radio" name="torscount" value="1"
-					disabled="disabled" /> <label>до 35 000 циклов</label></li>
-				<li><input type="radio" name="torscount" value="2"
-					disabled="disabled" /> <label>до 50 000 циклов</label></li>
-				<li><input type="radio" name="torscount" value="3"
-					disabled="disabled" /> <label>до 75 000 циклов</label></li>
-				<li><input type="radio" name="torscount" value="4"
-					disabled="disabled" /> <label>до 100 000 циклов</label></li>
-			</ul>
+				<select size="1" style="width:200px" id="springs">
+			    	<option selected value="0">стандартные пружины до 25000 циклов</option>
+			    	<option  value="1">усиленные пружины до 35000 циклов</option>
+			    	<option  value="2">усиленные пружины до 50000 циклов</option>
+			    	<option  value="3">усиленные пружины до 75000 циклов</option>
+			    	<option  value="4">усиленные пружины до 100000 циклов</option>
+			    	
+			    </select>
 		</div>
 		<p>
-			<input type="checkbox" name="poddom" value="" /> <label>Система защиты от поддомкрачивания</label>
+			<input type="checkbox" id="poddom" value="" /> <label>Система защиты от поддомкрачивания</label>
 		</p>
 	</div>
 
@@ -184,15 +180,15 @@
 			<p>
 				<select size="1" style="width:200px" id="mtype">
 			    	<option selected value="mtype_1">стандартный монтаж</option>
-			    	<option selected value="mtype_2">низкий монтаж (барабан сзади)</option>
-			    	<option selected value="mtype_3">наклонный монтаж (до 45°)</option>
-			    	<option selected value="mtype_4">наклонный низкий монтаж (до 45°)</option>
-			    	<option selected value="mtype_5">наклонный высокий с верхним расположением вала (до 45°)</option>
-			    	<option selected value="mtype_6">наклонный высокий с нижним расположением вала (до 45°)</option>
-			    	<option selected value="mtype_7">высокий монтаж с верхним расположением вала</option>
-			    	<option selected value="mtype_8">высокий монтаж с нижним расположением вала</option>
-			    	<option selected value="mtype_9">вертикальный монтаж с верхним расположением вала</option>
-			    	<option selected value="mtype_10">вертикальный монтаж с нижним расположением вала</option>
+			    	<option  value="mtype_2">низкий монтаж (барабан сзади)</option>
+			    	<option  value="mtype_3">наклонный монтаж (до 45°)</option>
+			    	<option  value="mtype_4">наклонный низкий монтаж (до 45°)</option>
+			    	<option  value="mtype_5">наклонный высокий с верхним расположением вала (до 45°)</option>
+			    	<option  value="mtype_6">наклонный высокий с нижним расположением вала (до 45°)</option>
+			    	<option  value="mtype_7">высокий монтаж с верхним расположением вала</option>
+			    	<option  value="mtype_8">высокий монтаж с нижним расположением вала</option>
+			    	<option  value="mtype_9">вертикальный монтаж с верхним расположением вала</option>
+			    	<option  value="mtype_10">вертикальный монтаж с нижним расположением вала</option>
 			    </select>
 			</p>			
 		</div>
@@ -248,6 +244,8 @@
 
 			var mtype="";
 			mtype=document.getElementById("mtype").value;
+			var springs="";
+			springs=document.getElementById("springs").value;
 			//alert(mtype);
 			
 			var montazh="none";
@@ -272,6 +270,7 @@
 				if (document.getElementById("an-motors").checked ) {mech="an-motors"};
 				if (document.getElementById("marantec").checked ) {mech="marantec"};
 			}
+			//alert(upr);
 			//var mount_type="none";
 			//if (document.getElementById("std_mount").checked) {mount_type="std_mount";}
 			//if (document.getElementById("low_mount").checked) {mount_type="low_mount";}
@@ -279,6 +278,8 @@
 			//alert(mount_type);
 			var aqua="none";
 			if (document.getElementById("aqua").checked) {aqua="yes"};
+			var poddom="none";
+			if (document.getElementById("poddom").checked) {poddom="yes"};
 			//alert(aqua);
 			var zamok="none";
 			if (document.getElementById("zamok").checked) {zamok="yes"};
@@ -313,7 +314,7 @@
 		    $.ajax({
 		    	type: 'POST',
 		        url: 'check_prom.php',
-		        data: {width: width, height: height, selected_color: selected_color, poltype: poltype, montazh: montazh, dostavka: dostavka, km: km,upr: upr, mtype: mtype, zamok: zamok, windows: windows, kalitka: kalitka, csx: csx, aqua: aqua },
+		        data: {width: width, height: height, poddom: poddom, springs: springs, selected_color: selected_color, poltype: poltype, montazh: montazh, dostavka: dostavka, km: km,upr: upr, mtype: mtype, zamok: zamok, windows: windows, kalitka: kalitka, csx: csx, aqua: aqua },
 		        // aqua:aqua, 
 		        cache: false,
 		        success: function(data){ $('.res').html(data); }
