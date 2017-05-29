@@ -1,6 +1,8 @@
 <?php
 $debugging=false;
 //ну тут всё ясно
+$ip=$_SERVER['REMOTE_ADDR'];
+
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
@@ -432,7 +434,8 @@ echo '<t/d>';
 echo '</tr>';
 echo '</table>';
 echo "<br>";
-
+echo 'IP='; echo $ip;
+echo "<br>";
 if ($debugging){
 	echo"Высота =".$height;
 	echo "<br>";
