@@ -238,7 +238,7 @@ echo 'Сумма';
 echo '</td>';
 echo '<td>';
 $discount_percent=$discount*100;
-echo 'Скидка '.$discount_percent.' %';
+echo 'с учетом скидки '.$discount_percent.' %';
 echo '</td>';
 
 echo '</tr>';
@@ -256,7 +256,7 @@ echo '<td>';
 echo $price.' руб.';
 echo '</td>';
 echo '<td>';
-echo $price*$discount;
+echo $price*(1-$discount);
 echo '</td>';
 echo '</tr>';
 
