@@ -1,5 +1,5 @@
 <?php
-$debugging=true;
+$debugging=false;
 //ну тут всё ясно
 $discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
@@ -523,10 +523,7 @@ if ($debugging){
 	//echo "Ширина =" . $csvdata [2];
 	//echo "<br>";
 	//echo "Высота =" . $csvdata [3];
-	
-	echo 'IP='; echo $ip;
 	echo "<br>";
-	
-	
+	echo 'IP='; echo $ip;
 }
 ?>
