@@ -188,6 +188,17 @@ if ($windows !=0){
 	$price_windows=$windows*4147;
 }
 
+if ($aqua != "none") {
+	if ($height < 3000) {
+		$price_aqua = 14318;
+		//echo "!!!!!".$height."!!!!!";
+		// $price=$price+14318;
+	} else {
+		//echo "!!!!!".$height."!!!!!";
+		$price_aqua = 20499;
+		// $price=$price+20499;
+	}
+}
 //if ($multi) {$price_multi=$csvdata[4]*1.05;}
 if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.05;}
 else {$price=$csvdata[4];}
@@ -499,6 +510,8 @@ if ($debugging){
 	echo"Окна =".$windows;
 	echo "<br>";
 	echo"Калитка =".$door;
+	echo "<br>";
+	echo"Аква =".$aqua;
 	
 	echo "<br>";
 	echo"springs =".$springs;
