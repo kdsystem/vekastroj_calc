@@ -1,6 +1,7 @@
 <?php
 $debugging=false;
 //ну тут всё ясно
+$discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
 
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
@@ -235,6 +236,11 @@ echo "<th> Коммерческое предложение  №".$orderNumber." 
 echo '<td>';
 echo 'Сумма';
 echo '</td>';
+echo '<td>';
+$discount_percent=$discount*100;
+echo 'Скидка '.$discount_percent.' %';
+echo '</td>';
+
 
 echo '</tr>';
 echo '<tr>';
