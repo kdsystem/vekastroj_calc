@@ -233,6 +233,9 @@ echo '<table border="1">';
 echo '<tr>';
 echo "<th> Коммерческое предложение  №".$orderNumber." от ".date("d.m.y")."</th>";
 echo '</tr>';
+echo '<td>';
+echo 'Сумма';
+echo '</td>';
 echo '<tr>';
 echo '<td>';
 echo 'Гаражные ворота ';
@@ -434,8 +437,7 @@ echo '<t/d>';
 echo '</tr>';
 echo '</table>';
 echo "<br>";
-echo 'IP='; echo $ip;
-echo "<br>";
+
 if ($debugging){
 	echo"Высота =".$height;
 	echo "<br>";
@@ -477,5 +479,10 @@ if ($debugging){
 	//echo "Ширина =" . $csvdata [2];
 	//echo "<br>";
 	//echo "Высота =" . $csvdata [3];
+	
+	echo 'IP='; echo $ip;
+	echo "<br>";
+	
+	
 }
 ?>
