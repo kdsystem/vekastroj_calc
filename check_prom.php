@@ -441,6 +441,9 @@ if ($upr == "automatic") {
 		echo '<td>';
 		echo $price_poddom.' руб.';
 		echo '</td>';
+		echo '<td>';
+		echo $price_poddom*(1-$discount).' руб.';
+		echo '</td>';
 		echo '</tr>';
 	}
 }
