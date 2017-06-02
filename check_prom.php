@@ -232,10 +232,11 @@ echo "<br>";
 echo '<table border="1">';
 echo '<tr>';
 echo "<th> Коммерческое предложение  №".$orderNumber." от ".date("d.m.y")."</th>";
-echo '</tr>';
 echo '<td>';
 echo 'Сумма';
 echo '</td>';
+
+echo '</tr>';
 echo '<tr>';
 echo '<td>';
 echo 'Гаражные ворота ';
