@@ -256,7 +256,7 @@ echo '<td>';
 echo $price.' руб.';
 echo '</td>';
 echo '<td>';
-echo $price*(1-$discount);
+echo $price*(1-$discount).' руб.';
 echo '</td>';
 echo '</tr>';
 
@@ -267,6 +267,10 @@ echo '</td>';
 echo '<td>';
 echo $price_mtype.' руб.';
 echo '</td>';
+echo '<td>';
+echo $price_mtype*(1-$discount).' руб.';
+echo '</td>';
+
 echo '</tr>';
 
 if ($springs !=0) {
@@ -276,6 +280,9 @@ if ($springs !=0) {
 	echo '</td>';
 	echo '<td>';
 	echo $price_springs.' руб.';
+	echo '</td>';
+	echo '<td>';
+	echo $price_springs*(1-$discount).' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -289,6 +296,9 @@ if ($door=="door_std") {
 	echo '<td>';
 	echo $price_door.' руб.';
 	echo '</td>';
+	echo '<td>';
+	echo $price_door*(1-$discount).' руб.';
+	echo '</td>';
 	echo '</tr>';
 }
 
@@ -299,6 +309,9 @@ if ($door=="door_low") {
 	echo '</td>';
 	echo '<td>';
 	echo $price_door.' руб.';
+	echo '</td>';
+	echo '<td>';
+	echo $price_door*(1-$discount).' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -352,6 +365,9 @@ if ($windows!=0) {
 	echo '<td>';
 	echo $price_windows." руб.";
 	echo '</td>';
+	echo '<td>';
+	echo $price_windows*(1-$discount).' руб.';
+	echo '</td>';
 	echo '</tr>';
 }
 
@@ -362,6 +378,9 @@ if ($aqua !="none") {
 	echo '</td>';
 	echo '<td>';
 	echo $price_aqua." руб.";
+	echo '</td>';
+	echo '<td>';
+	echo $price_aqua*(1-$discount).' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -374,6 +393,9 @@ if ($zamok !="none") {
 	echo '</td>';
 	echo '<td>';
 	echo $price_zamok." руб.";
+	echo '</td>';
+	echo '<td>';
+	echo $price_zamok*(1-$discount).' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
