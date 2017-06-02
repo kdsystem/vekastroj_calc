@@ -241,7 +241,6 @@ $discount_percent=$discount*100;
 echo 'Скидка '.$discount_percent.' %';
 echo '</td>';
 
-
 echo '</tr>';
 echo '<tr>';
 echo '<td>';
@@ -255,6 +254,9 @@ if ($springs==0 )
 echo '<td>';
 //echo $csvdata[4].' руб.';
 echo $price.' руб.';
+echo '</td>';
+echo '<td>';
+echo $price*$discount;
 echo '</td>';
 echo '</tr>';
 
