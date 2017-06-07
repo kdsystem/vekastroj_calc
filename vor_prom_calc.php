@@ -25,7 +25,7 @@
 		</div>
 		<h2>Дополнительно</h2>
 		<div id="div_dops">
-			<p>
+			<p id="p_class">
 			<div id="div_zamok">
 				<input type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок ригельный</label>
 			</div>
@@ -36,10 +36,10 @@
 			<br> <input type="checkbox" name="kalitka" id="door" onchange="Door(this);" /><label>Калитка</label>
 			</p>
 			<div id="kalitka" style="display: none;">
-				<p>
+				<p id="p_class">
 					<input type="radio" name="kaltype" value="1" id="door_std" checked="checked" /> <label>стандартная</label>
 				</p>
-				<p>
+				<p id="p_class">
 					<input type="radio" name="kaltype" value="2" id="door_low" /> <label>с низким порогом</label>
 				</p>
 				<script>
@@ -59,7 +59,7 @@
 		</div>
 
 		<div class="b-springs">
-			<p>
+			<p id="p_class">
 				<select size="1" style="width:200px" id="springs">
 			    	<option selected value="0">стандартные пружины до 25000 циклов</option>
 			    	<option  value="1">усиленные пружины до 35000 циклов</option>
@@ -69,7 +69,7 @@
 			    	
 			    </select>
 		</div>
-		<p>
+		<p id="p_class">
 			<input type="checkbox" id="poddom" value="" /> <label>Система защиты от поддомкрачивания</label>
 		</p>
 	</div>
@@ -100,7 +100,7 @@
 
 		<div id="div_upravlenie">
 			<h2>Управление</h2>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="upr" id="manual" checked="checked"
 					onclick="Automatic(this);" /><label>ручное управление</label> <br>
 				<input type="radio" name="upr" id="reductor"
@@ -109,11 +109,11 @@
 					onclick="Automatic(this);" /><label>электропривод</label>
 			</p>
 			<div id="div_automatic" style="display: none;">
-				<p>
+				<p id="p_class">
 					<input type="radio" name="automtype" id="an-motors"
 						value="AN-Motors" /><label>AN-Motors</label>
 				</p>
-				<p>
+				<p id="p_class">
 					<input type="radio" name="automtype" id="marantec" value="Marantec" /><label>Marantec</label>
 				</p>
 			</div>
@@ -135,19 +135,19 @@
 		</div>
 		<div class="winqty">
 			<h2>Количество окон</h2>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="okna" id="windows_0" checked="checked" /> <label>0</label>
 			</p>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="okna" id="windows_1" /> <label>1</label>
 			</p>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="okna" id="windows_2" /> <label>2</label>
 			</p>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="okna" id="windows_3" /> <label>3</label>
 			</p>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="okna" id="windows_4" /> <label>4</label>
 			</p>
 		</div>
@@ -177,7 +177,7 @@
 	<div id="blok3">
 		<div>
 			<h2>Тип монтажа</h2>
-			<p>
+			<p id="p_class">
 				<select size="1" style="width:200px" id="mtype">
 			    	<option selected value="mtype_1">стандартный монтаж</option>
 			    	<option  value="mtype_2">низкий монтаж (барабан сзади)</option>
@@ -194,10 +194,10 @@
 		</div>
 
 		<h2>Доставка / монтаж</h2>
-		<p>
+		<p id="p_class">
 			<input type="checkbox" name="montazh" id="montazh" value="" /><label>Монтаж ворот</label>
 		</p>
-		<p>
+		<p id="p_class">
 			<input type="checkbox" name="dostavka" value="" data-value="delivery"
 				id="delivery" onclick="Delivery(this);" /><label>Доставка</label>
 		</p>
@@ -215,17 +215,17 @@
     	</script>
 
 		<div id="dostavka" style="display: none;">
-			<p>
+			<p id="p_class">
 				<input type="radio" name="city" id="outofkad" value="abroad"
 					onclick="Delivery(this);" /> <label>За пределами КАД</label>
 			</p>
-			<p>
+			<p id="p_class">
 			
 			
 			<div id="kad" style="display: none;">
 				<input type="text" id="km" name="kad" value="" maxlength="4" /> км.
 			</div>
-			<p>
+			<p id="p_class">
 				<input type="radio" name="city" id="city" value=""
 					onclick="Delivery(this);" /> <label>По городу</label>
 			</p>
@@ -327,7 +327,7 @@
 
 	<div id="blok4">
 		<h2>Тип подвеса</h2>
-		<p>
+		<p id="p_class">
 			<input type="checkbox" name="csx" id="podves_csx2"
 				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа
 				CS-2 <br> <span style="font-size: 75%; margin-left: 25px">(высота
