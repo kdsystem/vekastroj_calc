@@ -1,5 +1,5 @@
 <?php
-$debugging=true;
+$debugging=false;
 //ну тут всё ясно
 $discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
@@ -263,9 +263,7 @@ echo '</tr>';
 echo '<tr>';
 echo '<td>';
 echo 'Гаражные ворота ';
-echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.";
-echo "<br>";
-echo '(профиль '.$maintype.', полотно '.$poltype.', ';
+echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color.",";
 if ($springs==0 )
 {echo $txt_springs;}
@@ -439,7 +437,8 @@ if ($upr == "automatic") {
 		$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
 		echo '<tr>';
 		echo '<td>';
-		echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности (датчика калитки и датчиков ослабления тяговых тросов)";
+		echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности";
+		echo "(датчика калитки и датчиков ослабления тяговых тросов)";
 		echo '</td>';
 		echo '<td>';
 		echo $price_automatic_dop." руб.";
