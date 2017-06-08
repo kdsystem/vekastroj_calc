@@ -526,8 +526,11 @@ if ($debugging){
 	
 	echo "<br>";
 	echo"csx =".$csx;
+	echo "<br>";
 	echo"price_poddom_discount =".$price_poddom_discount;
-	
+	echo "<br>";
+	echo"poddom =".$poddom;
+	echo "<br>";
 	
 	//echo "Ширина =" . $csvdata [2];
 	//echo "<br>";
