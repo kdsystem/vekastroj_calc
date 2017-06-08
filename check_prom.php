@@ -100,6 +100,7 @@ $springs=$_REQUEST['springs'];
 $poddom=$_REQUEST['poddom'];
 $price=0;
 $price_poddom=0;
+$price_poddom_discount=0;
 $price_csx=0;
 $price_door=0;
 $price_aqua=0;
@@ -442,7 +443,8 @@ if ($upr == "automatic") {
 		echo $price_poddom.' руб.';
 		echo '</td>';
 		echo '<td>';
-		echo $price_poddom*(1-$discount).' руб.';
+		$price_poddom_discount=$price_poddom*(1-$discount);
+		echo $price_poddom_discount.' руб.';
 		echo '</td>';
 		echo '</tr>';
 	}
@@ -478,6 +480,9 @@ echo 'Итого';
 echo '</td>';
 echo '<td>';
 echo $price+$price_poddom+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
+echo '</td>';
+echo '<td>';
+echo 'тут цена со скидкой';
 echo '</td>';
 echo '</tr>';
 echo '</table>';
