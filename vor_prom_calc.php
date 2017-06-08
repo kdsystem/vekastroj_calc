@@ -382,7 +382,7 @@
 					var link = "mailto:me@example.com"
 			             + "?cc=myCCaddress@example.com"
 			             + "&subject=" + escape("This is my subject")
-			             + "&body=" + escape(document.getElementById('myText').value);
+			             + "&body=" + escape("sdfgsdfgaerdfgaerdfgerdfcg");
 
 			    window.location.href = link;
 					//window.open('mailto:test@example.com?subject=subject&body=body');
