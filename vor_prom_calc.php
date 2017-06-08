@@ -375,6 +375,14 @@
 	<div id="kp" style="display: none;">
 		<div class="res">
 		</div>
+		<div>
+			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
+			<script type="text/javascript">
+				function GetPrice(){
+					alert("Sending email");
+				}
+			</script>
+		</div>
 	</div>
 	
 </body>

@@ -264,7 +264,7 @@ echo '<tr>';
 echo '<td>';
 echo 'Гаражные ворота ';
 echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
-echo 'цвет ='.$selected_color.",";
+echo 'цвет ='.$selected_color;
 if ($springs==0 )
 {echo $txt_springs;}
 echo '<td>';
