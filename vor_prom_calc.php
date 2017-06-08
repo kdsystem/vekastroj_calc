@@ -313,7 +313,7 @@
 			document.getElementById("parameters").style= "display: none;";
 		    $.ajax({
 		    	type: 'POST',
-		        url: 'check_prom.php',
+		        url: 'http://192.168.2.6/wss/custom_php/check_prom.php',
 		        data: {width: width, height: height, poddom: poddom, springs: springs, selected_color: selected_color, poltype: poltype, montazh: montazh, dostavka: dostavka, km: km,upr: upr, mtype: mtype, zamok: zamok, windows: windows, kalitka: kalitka, csx: csx, aqua: aqua },
 		        // aqua:aqua, 
 		        cache: false,
