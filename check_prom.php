@@ -476,7 +476,7 @@ if ($csx !="none") {
 echo '<tr>';
 echo '<td>';
 echo 'Итого';
-echo '<td>';
+echo '</td>';
 echo '<td>';
 echo $price+$price_poddom+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
 echo '</td>';
