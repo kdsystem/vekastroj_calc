@@ -321,8 +321,6 @@
 		    });
 		};
 	</script>
-
-
 	</div>
 
 	<div id="blok4">

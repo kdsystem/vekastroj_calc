@@ -100,8 +100,13 @@ $springs=$_REQUEST['springs'];
 $poddom=$_REQUEST['poddom'];
 $price=0;
 $price_poddom=0;
+$price_discount=0;
 $price_poddom_discount=0;
 $price_zamok_discount=0;
+$price_springs_discount=0;
+$price_mtype_discount=0;
+$price_door_discount=0;
+$price_aqua_discount=0;
 $price_csx=0;
 $price_door=0;
 $price_aqua=0;
@@ -268,8 +273,9 @@ echo '<td>';
 //echo $csvdata[4].' руб.';
 echo $price.' руб.';
 echo '</td>';
+$price_discount=$price*(1-$discount);
 echo '<td>';
-echo $price*(1-$discount).' руб.';
+echo $price_discount.' руб.';
 echo '</td>';
 echo '</tr>';
 
@@ -280,8 +286,9 @@ echo '</td>';
 echo '<td>';
 echo $price_mtype.' руб.';
 echo '</td>';
+$price_mtype_discount=$price_mtype*(1-$discount);
 echo '<td>';
-echo $price_mtype*(1-$discount).' руб.';
+echo $price_mtype_discount.' руб.';
 echo '</td>';
 
 echo '</tr>';
@@ -294,8 +301,9 @@ if ($springs !=0) {
 	echo '<td>';
 	echo $price_springs.' руб.';
 	echo '</td>';
+	$price_springs_discount=$price_springs*(1-$discount);
 	echo '<td>';
-	echo $price_springs*(1-$discount).' руб.';
+	echo $price_springs_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -309,8 +317,9 @@ if ($door=="door_std") {
 	echo '<td>';
 	echo $price_door.' руб.';
 	echo '</td>';
+	$price_door_discount=$price_door*(1-$discount);
 	echo '<td>';
-	echo $price_door*(1-$discount).' руб.';
+	echo $price_door_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -323,8 +332,9 @@ if ($door=="door_low") {
 	echo '<td>';
 	echo $price_door.' руб.';
 	echo '</td>';
+	$price_door_discount=$price_door*(1-$discount);
 	echo '<td>';
-	echo $price_door*(1-$discount).' руб.';
+	echo $price_door_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -378,8 +388,9 @@ if ($windows!=0) {
 	echo '<td>';
 	echo $price_windows." руб.";
 	echo '</td>';
+	$price_windows_discount=$price_windows*(1-$discount);
 	echo '<td>';
-	echo $price_windows*(1-$discount).' руб.';
+	echo $price_windows_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -392,8 +403,9 @@ if ($aqua !="none") {
 	echo '<td>';
 	echo $price_aqua." руб.";
 	echo '</td>';
+	$price_aqua_discount=$price_aqua*(1-$discount);
 	echo '<td>';
-	echo $price_aqua*(1-$discount).' руб.';
+	echo $price_aqua_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -424,12 +436,16 @@ if ($upr == "automatic") {
 	echo '</td>';
 	if ($door !="none"){
 		$price_automatic_dop=2850;
+		$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
 		echo '<tr>';
 		echo '<td>';
 		echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности (датчика калитки и датчиков ослабления тяговых тросов)";
 		echo '</td>';
 		echo '<td>';
 		echo $price_automatic_dop." руб.";
+		echo '</td>';
+		echo '<td>';
+		echo $price_automatic_dop_dicount." руб.";
 		echo '</td>';
 	}
 	echo '</tr>';
@@ -484,7 +500,7 @@ echo '<td>';
 echo $price+$price_poddom+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
 echo '</td>';
 echo '<td>';
-echo $price_poddom_discount+$price_zamok_discount;
+echo $price_discount+$price_poddom_discount+$price_springs_discount+$price_mtype_discount+$price_door_discount+$price_aqua_discount+$price_zamok_discount;
 echo '</td>';
 echo '</tr>';
 echo '</table>';
