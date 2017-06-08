@@ -379,7 +379,7 @@
 			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 			<script type="text/javascript">
 				function SendMail(){
-					alert("Sending email");
+					window.open('mailto:test@example.com?subject=subject&body=body');
 				}
 			</script>
 		</div>
