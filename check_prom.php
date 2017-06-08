@@ -101,6 +101,7 @@ $poddom=$_REQUEST['poddom'];
 $price=0;
 $price_poddom=0;
 $price_poddom_discount=0;
+$price_zamok_discount=0;
 $price_csx=0;
 $price_door=0;
 $price_aqua=0;
@@ -407,7 +408,8 @@ if ($zamok !="none") {
 	echo $price_zamok." руб.";
 	echo '</td>';
 	echo '<td>';
-	echo $price_zamok*(1-$discount).' руб.';
+	$price_zamok_discount=$price_zamok*(1-$discount);
+	echo $price_zamok_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -432,7 +434,7 @@ if ($upr == "automatic") {
 	}
 	echo '</tr>';
 	
-	if ($poddom =="yes") {
+	if ($poddom !="none") {
 		echo '<tr>';
 		echo '<td>';
 		echo 'Система защиты от поддомкрачивания (устанавливается на промышленные секционные ворота с навальным электроприводом. ';
