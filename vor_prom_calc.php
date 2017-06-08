@@ -378,7 +378,7 @@
 		<div>
 			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 			<script type="text/javascript">
-				function GetPrice(){
+				function SendMail(){
 					alert("Sending email");
 				}
 			</script>
