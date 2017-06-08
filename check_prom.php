@@ -1,5 +1,5 @@
 <?php
-$debugging=true;
+$debugging=false;
 //ну тут всё ясно
 $discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
@@ -100,7 +100,6 @@ $springs=$_REQUEST['springs'];
 $poddom=$_REQUEST['poddom'];
 $price=0;
 $price_poddom=0;
-$price_poddom_discount=0;
 $price_csx=0;
 $price_door=0;
 $price_aqua=0;
@@ -114,6 +113,7 @@ $price_csx_text="";
 $price_reductor=0;
 $price_springs=0;
 $txt_springs="";
+
 
 if ($maintype="proplus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
@@ -442,8 +442,7 @@ if ($upr == "automatic") {
 		echo $price_poddom.' руб.';
 		echo '</td>';
 		echo '<td>';
-		$price_poddom_discount = $price_poddom*(1-$discount);
-		echo $price_poddom_discount.' руб.';
+		echo $price_poddom*(1-$discount).' руб.';
 		echo '</td>';
 		echo '</tr>';
 	}
@@ -476,10 +475,10 @@ if ($csx !="none") {
 echo '<tr>';
 echo '<td>';
 echo 'Итого';
-echo '</td>';
+echo '<t/d>';
 echo '<td>';
 echo $price+$price_poddom+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
-echo '</td>';
+echo '<t/d>';
 echo '</tr>';
 echo '</table>';
 echo "<br>";
