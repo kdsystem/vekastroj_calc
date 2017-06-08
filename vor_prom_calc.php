@@ -306,7 +306,7 @@
 			if (document.getElementById("podves_csx3").checked ) { csx="csx3"};
 			if (document.getElementById("podves_csx4").checked ) { csx="csx4"};
 			if (document.getElementById("podves_csx5").checked ) { csx="csx5"};
-			alert(poddom);
+			//alert(poddom);
 			//alert(maintype);
 			//var color=document.getElementById("height").value;
 			document.getElementById("kp").style= "display: inline-block;";
