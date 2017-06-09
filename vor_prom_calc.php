@@ -384,7 +384,8 @@
 					url='mailto:lubimov@wss.spb.ru?subject=ТЕМА&body=';
 					url+=encodeURIComponent(msg);
 					//window.location.href = url;
-					window.open(url);
+					//window.open(url);
+					
 				}
 			</script>
 		</div>
