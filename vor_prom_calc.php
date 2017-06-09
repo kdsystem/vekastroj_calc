@@ -380,8 +380,8 @@
 			<script type="text/javascript">
 				function SendMail(){
 					body = document.getElementById("res").innerHTML;
-					alert(body);
-					window.open('mailto:test@example.com?subject=subject&body='.body);
+					//alert(body);
+					window.open('mailto:lubimov@wss.spb.ru?subject=ТЕМА&body='.body);
 				}
 			</script>
 		</div>
