@@ -379,9 +379,9 @@
 			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 			<script type="text/javascript">
 				function SendMail(){
-					body = document.getElementById("res").innerHTML;
-					//alert(body);
-					window.open('mailto:lubimov@wss.spb.ru?subject=ТЕМА&body='.body);
+					msg = document.getElementById("res").innerHTML;
+					alert(msg);
+					window.open('mailto:lubimov@wss.spb.ru?subject=ТЕМА&body='.msg);
 				}
 			</script>
 		</div>
