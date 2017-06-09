@@ -381,8 +381,10 @@
 				function SendMail(){
 					msg = document.getElementById("kp").innerHTML;
 					//alert(msg);
-					window.location.href = 'mailto:lubimov@wss.spb.ru?subject=ТЕМА&body='.msg;
-					//window.open('mailto:lubimov@wss.spb.ru?subject=ТЕМА&body='.msg);
+					url='mailto:lubimov@wss.spb.ru?subject=ТЕМА&body=';
+					url+=encodeURIComponent(msg)
+					//window.location.href = .msg;
+					window.open(url);
 				}
 			</script>
 		</div>
