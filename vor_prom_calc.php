@@ -375,20 +375,17 @@
 	<div id="kp" style="display: none;">
 		<div class="res">
 		</div>
-		<div>
+		<div id="send_button">
 			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 			<script type="text/javascript">
 				function SendMail(){
-					var link = "mailto:me@example.com"
-			             + "?cc=myCCaddress@example.com"
-			             + "&subject=" + escape("This is my subject")
-			             + "&body=" + escape("sdfgsdfgaerdfgaerdfgerdfcg");
-
-			    window.location.href = link;
-					//window.open('mailto:test@example.com?subject=subject&body=body');
+					window.open('mailto:test@example.com?subject=subject&body=body');
 				}
 			</script>
 		</div>
+		
+		<div id="send_email">
+		</div>>
 	</div>
 	
 </body>
