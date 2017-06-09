@@ -11,7 +11,7 @@ $backurl = "http://kdsystem.noip.me:8066/vekastroj_calc/sendmail.html/index.html
 // Принимаем данные с формы
 
 $name = $_POST ['name'];
-$email = $_GET ['email'];
+$email = $_POST['email'];
 $msg = $_POST ['message'];
 // Проверяем валидность e-mail
 echo "email:".$email."!";
