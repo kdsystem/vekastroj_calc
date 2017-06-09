@@ -33,12 +33,8 @@ else
 	mail ( $adminemail, "$date $time Сообщение от $name", $msg, $headers );
 	
 	// Сохраняем в базу данных
-	
-	$f = fopen ( "message.txt", "a" );
-	fwrite ( $f, " \n $date $time Сообщение от $name" );
-	fwrite ( $f, "\n $msg " );
-	fwrite ( $f, "\n ---------------" );
-	fclose ( $f );
+	$telemetry_file = "message.txt";
+	file_put_contents($telemetry_file, "\r\n".$date." New instance started\r\n", FILE_APPEND | LOCK_EX);
 	
 	// Выводим сообщение пользователю
 	
