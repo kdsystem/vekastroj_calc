@@ -242,6 +242,7 @@ if ($springs==4) { $txt_springs='усиленные торсионные пру�
 $price_springs=$csvdata[4]*0.08;};
 
 echo "<br>";
+echo '<div id="content">';
 $orderNumber=uniqid();
 
 echo '<img width="60%" src="images/kp.png">';
@@ -554,5 +555,6 @@ if ($debugging){
 	//echo "Высота =" . $csvdata [3];
 	echo "<br>";
 	echo 'IP='; echo $ip;
+	echo '</div>';
 }
 ?>

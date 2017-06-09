@@ -379,10 +379,10 @@
 			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 			<script type="text/javascript">
 				function SendMail(){
-					msg = document.getElementById("res").innerHTML;
+					msg = document.getElementById("content").innerHTML;
 					//alert(msg);
 					url='mailto:lubimov@wss.spb.ru?subject=ТЕМА&body=';
-					url+=encodeURIComponent(msg)
+					url+=encodeURIComponent(msg);
 					window.location.href = url;
 					//window.open(url);
 				}
