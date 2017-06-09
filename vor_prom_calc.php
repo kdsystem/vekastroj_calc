@@ -380,6 +380,7 @@
 			<script type="text/javascript">
 				function SendMail(){
 					body = encodeURIComponent(body);
+					alert(body);
 					window.open('mailto:test@example.com?subject=subject&body=body');
 				}
 			</script>
