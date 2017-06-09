@@ -26,8 +26,7 @@ else
 	
 	// Отправляем письмо админу
 	
-	mail ( "$adminemail", "$date $time Сообщение
-от $name", "$msg" );
+	mail ( "$adminemail", "$date, $time, Сообщение от $name", "$msg" );
 	
 	// Сохраняем в базу данных
 	
