@@ -373,13 +373,13 @@
 	</div>
 </div>
 	<div id="kp" style="display: none;">
-		<div class="res">
+		<div id="res" class="res">
 		</div>
 		<div id="send_button">
 			<input id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 			<script type="text/javascript">
 				function SendMail(){
-					msg = document.getElementById("kp").innerHTML;
+					msg = document.getElementById("res").innerHTML;
 					//alert(msg);
 					url='mailto:lubimov@wss.spb.ru?subject=ТЕМА&body=';
 					url+=encodeURIComponent(msg)
