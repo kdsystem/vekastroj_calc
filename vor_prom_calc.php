@@ -388,9 +388,6 @@
 				}
 			</script>
 		</div>
-		
-		<div id="send_email">
-		</div>
 	</div>
 	
 </body>
