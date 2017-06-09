@@ -4,7 +4,7 @@
 $adminemail = "kdsystem@gmail.com"; // e-mail админа
 $date = date ( "d.m.y" ); // число.месяц.год
 $time = date ( "H:i" ); // часы:минуты:секунды
-$backurl = "http://kdsystem.noip.me:8066/vekastroj_calc/sendmail.html/index.html"; // На какую страничку переходит после отправки письма
+$backurl = "http://kdsystem.noip.me:8066/vekastroj_calc/sendmail.html"; // На какую страничку переходит после отправки письма
                                       
 // ---------------------------------------------------------------------- //
                                       
