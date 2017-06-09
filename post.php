@@ -34,7 +34,7 @@ else
 	
 	// Сохраняем в базу данных
 	
-	$f = fopen ( "message.txt", "a+" );
+	$f = fopen ( "message.txt", "a" );
 	fwrite ( $f, " \n $date $time Сообщение от $name" );
 	fwrite ( $f, "\n $msg " );
 	fwrite ( $f, "\n ---------------" );
