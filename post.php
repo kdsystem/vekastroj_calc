@@ -1,10 +1,10 @@
 <?
 
 // ----------------------------конфигурация-------------------------- //
-$adminemail = "admin@site.ru"; // e-mail админа
+$adminemail = "kdsystem@gmail.com"; // e-mail админа
 $date = date ( "d.m.y" ); // число.месяц.год
 $time = date ( "H:i" ); // часы:минуты:секунды
-$backurl = "http://site.ru/index.html"; // На какую страничку переходит после отправки письма
+$backurl = "http://kdsystem.noip.me:8066/vekastroj_calc/sendmail.html/index.html"; // На какую страничку переходит после отправки письма
                                       
 // ---------------------------------------------------------------------- //
                                       
@@ -17,18 +17,11 @@ $msg = $_POST ['message'];
 
 if (! preg_match ( "|^([a-z0-9_\.\-]{1,20})@([a-z0-9\.\-]{1,20})\.([a-z]{2,4})|is", strtolower ( $email ) )) 
 {
-	echo "<center>Вернитесь <a
-href='javascript:history.back(1)'><B>назад</B></a>. Вы
-указали неверные данные!";
+	echo "<center>Вернитесь <a href='javascript:history.back(1)'><B>назад</B></a>. Вы указали неверные данные!";
 } 
 else 
-{
-	
-	$msg = "
-<p>Имя: $name</p>
-<p>E-mail: $email</p>
-<p>Сообщение: $msg</p>
-";
+{	
+	$msg = "<p>Имя: $name</p> <p>E-mail: $email</p> <p>Сообщение: $msg</p>";
 	
 	// Отправляем письмо админу
 	
