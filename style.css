@@ -1,5 +1,9 @@
-#p
-.p_class{}
+.p_class{	
+	border: 1px solid red;
+	width: 100%;
+	height:800px;
+	
+}
 
 #parameters{
 	border: 1px solid red;
