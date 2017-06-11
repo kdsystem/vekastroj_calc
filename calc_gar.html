@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, .site-title {
 	font-family: 'Open Sans', sans-serif;
 }
 </style>
-<script src="/wss/media/jui/js/jquery.min.js?a319230f08a178207cdad66db311590a"></script>
+
 <script src="/wss/media/jui/js/jquery-noconflict.js?a319230f08a178207cdad66db311590a"></script>
 <script src="/wss/media/jui/js/jquery-migrate.min.js?a319230f08a178207cdad66db311590a"></script>
 <script src="/wss/media/system/js/caption.js?a319230f08a178207cdad66db311590a"></script>
@@ -451,7 +451,7 @@ h1, h2, h3, h4, h5, h6, .site-title {
 								        url: 'http://kdsystem.noip.me:8066/vekastroj_calc/check_gar.php',
 								        data: { maintype: maintype, poltype: poltype, width: width, height: height, selected_color: selected_color, montazh: montazh, dostavka: dostavka, km: km, upr: upr, mount_type: mount_type, zamok: zamok, windows: windows, kalitka: kalitka, aqua:aqua, csx: csx},
 								        cache: false,
-								        success: function(data){ $('.kp').html(data); }
+								        success: function(data){ $('.res').html(data); }
 								    });
 								};
 							</script>
