@@ -107,8 +107,8 @@ h1, h2, h3, h4, h5, h6, .site-title {
 											checked="checked" onclick="clickTrend(this);" /> <label class="label1">CLASSIC</label>
 									</p>
 									<p>
-										<input type="radio" name="maintype" id="trend_maintype" value="2"
-											onclick="clickTrend(this);" /> <label>TREND</label>
+										<input class="input1" type="radio" name="maintype" id="trend_maintype" value="2"
+											onclick="clickTrend(this);" /> <label class="label1">TREND</label>
 									</p>
 						
 									<script>
@@ -125,21 +125,21 @@ h1, h2, h3, h4, h5, h6, .site-title {
 						
 									<h2>Тип полотна</h2>
 									<p>
-										<input type="radio" name="poltype" id="poltype_1" value="S-гофр"
+										<input class="input1" type="radio" name="poltype" id="poltype_1" value="S-гофр"
 											data-value="s_gofr" checked="checked" onclick="handleClick(this);" />
-										<label>S–гофр</label>
+										<label class="label1">S–гофр</label>
 									</p>
 									<p>
-										<input type="radio" name="poltype" id="poltype_2" value="M-гофр"
-											data-value="m_gofr" onclick="handleClick(this);" /> <label>M–гофр</label>
+										<input class="input1" type="radio" name="poltype" id="poltype_2" value="M-гофр"
+											data-value="m_gofr" onclick="handleClick(this);" /> <label class="label1">M–гофр</label>
 									</p>
 									<p>
-										<input type="radio" name="poltype" id="poltype_3" value="L–гофр"
-											data-value="l_gofr" onclick="handleClick(this);" /> <label>L–гофр</label>
+										<input class="input1" type="radio" name="poltype" id="poltype_3" value="L–гофр"
+											data-value="l_gofr" onclick="handleClick(this);" /> <label class="label1">L–гофр</label>
 									</p>
 									<p>
-										<input type="radio" name="poltype" id="poltype_4" value="Микро-волна"
-											data-value="wave" onclick="handleClick(this);" /> <label>Волна</label>
+										<input class="input1" type="radio" name="poltype" id="poltype_4" value="Микро-волна"
+											data-value="wave" onclick="handleClick(this);" /> <label class="label1">Волна</label>
 									</p>
 						
 									<script>
@@ -164,12 +164,12 @@ h1, h2, h3, h4, h5, h6, .site-title {
 						
 									<h2>Доставка / монтаж</h2>
 									<p>
-										<input type="checkbox" name="montazh" id="montazh" value="" /><label>Монтаж
+										<input class="input1" type="checkbox" name="montazh" id="montazh" value="" /><label class="label1">Монтаж
 											ворот</label>
 									</p>
 									<p>
-										<input type="checkbox" name="dostavka" value=""
-											data-value="delivery" id="delivery" onclick="Delivery(this);" /><label>Доставка</label>
+										<input class="input1" type="checkbox" name="dostavka" value=""
+											data-value="delivery" id="delivery" onclick="Delivery(this);" /><label class="label1">Доставка</label>
 									</p>
 									<script>
 							    	function Delivery(delivery)
@@ -186,41 +186,41 @@ h1, h2, h3, h4, h5, h6, .site-title {
 						
 									<div id="dostavka" style="display: none;">
 										<p>
-											<input type="radio" name="city" id="outofkad" value="abroad"
-												onclick="Delivery(this);" /> <label>За пределами КАД</label>
+											<input class="input1" type="radio" name="city" id="outofkad" value="abroad"
+												onclick="Delivery(this);" /> <label class="label1">За пределами КАД</label>
 										</p>
 										<p>
 										
 										
 										<div id="kad" style="display: none;">
-											<input type="text" id="km" name="kad" value="" maxlength="4" /> км.
+											<input class="input1" type="text" id="km" name="kad" value="" maxlength="4" /> км.
 										</div>
 										<p>
-											<input type="radio" name="city" id="city" value=""
-												onclick="Delivery(this);" /> <label>По городу</label>
+											<input class="input1" type="radio" name="city" id="city" value=""
+												onclick="Delivery(this);" /> <label class="label1">По городу</label>
 										</p>
 									</div>
 								</div>
 								<div class="block_b">
 									<h2>Цвет</h2>
-									<input type="radio" name="vcolor" id="1" onclick="Click_color(this);"
-										checked="checked" /><label>белый RAL9016</label> <br> <input
-										type="radio" name="vcolor" id="2" onclick="Click_color(this);" /><label>коричневый
-										RAL8014</label> <br> <input type="radio" name="vcolor" id="12"
-										onclick="Click_color(this);" /><label>шоколад RAL 8017</label> <br>
-									<input type="radio" name="vcolor" id="3" onclick="Click_color(this);" /><label>серебро
-										RAL9006</label> <br> <input type="radio" name="vcolor" id="4"
-										onclick="Click_color(this);" /><label>синий RAL5010</label> <br> <input
-										type="radio" name="vcolor" id="5" onclick="Click_color(this);" /><label>винно-красный
-										RAL3004</label> <br> <input type="radio" name="vcolor" id="6"
-										onclick="Click_color(this);" /><label>зеленый RAL6005</label> <br> <input
-										type="radio" name="vcolor" id="7" onclick="Click_color(this);" /><label>бежевый
-										RAL1015</label> <br> <input type="radio" name="vcolor" id="8"
-										onclick="Click_color(this);" /><label>антрацит ADS 703</label> <br>
-									<input type="radio" name="vcolor" id="9" onclick="Click_color(this);" /><label>золотой
-										дуб</label> <br> <input type="radio" name="vcolor" id="10"
-										onclick="Click_color(this);" /><label>темный дуб</label> <br> <input
-										type="radio" name="vcolor" id="11" onclick="Click_color(this);" /><label>вишня</label>
+									<input class="input1" type="radio" name="vcolor" id="1" onclick="Click_color(this);"
+										checked="checked" /><label class="label1">белый RAL9016</label> <br> <input class="input1"
+										type="radio" name="vcolor" id="2" onclick="Click_color(this);" /><label class="label1">коричневый
+										RAL8014</label> <br> <input class="input1" type="radio" name="vcolor" id="12"
+										onclick="Click_color(this);" /><label class="label1">шоколад RAL 8017</label> <br>
+									<input class="input1" type="radio" name="vcolor" id="3" onclick="Click_color(this);" /><label class="label1">серебро
+										RAL9006</label> <br> <input class="input1" type="radio" name="vcolor" id="4"
+										onclick="Click_color(this);" /><label class="label1">синий RAL5010</label> <br> <input class="input1"
+										type="radio" name="vcolor" id="5" onclick="Click_color(this);" /><label class="label1">винно-красный
+										RAL3004</label> <br> <input class="input1" type="radio" name="vcolor" id="6"
+										onclick="Click_color(this);" /><label class="label1">зеленый RAL6005</label> <br> <input class="input1"
+										type="radio" name="vcolor" id="7" onclick="Click_color(this);" /><label class="label1">бежевый
+										RAL1015</label> <br> <input class="input1" type="radio" name="vcolor" id="8"
+										onclick="Click_color(this);" /><label class="label1">антрацит ADS 703</label> <br>
+									<input class="input1" type="radio" name="vcolor" id="9" onclick="Click_color(this);" /><label class="label1">золотой
+										дуб</label> <br> <input class="input1" type="radio" name="vcolor" id="10"
+										onclick="Click_color(this);" /><label class="label1">темный дуб</label> <br> <input class="input1"
+										type="radio" name="vcolor" id="11" onclick="Click_color(this);" /><label class="label1">вишня</label>
 									<script>
 						    	function Click_color(color)
 						    	{
@@ -270,20 +270,20 @@ h1, h2, h3, h4, h5, h6, .site-title {
 								<div class="block_c">
 									<h2>Управление</h2>
 									<p>
-										<input type="radio" name="upr" value="Ручное" id="manual"
-											checked="checked" onclick="Automatic(this);" /><label>Ручное</label>
+										<input class="input1" type="radio" name="upr" value="Ручное" id="manual"
+											checked="checked" onclick="Automatic(this);" /><label class="label1">Ручное</label>
 									</p>
 									<p>
-										<input type="radio" name="upr" value="Автоматическое" id="automatic"
-											onclick="Automatic(this);" /><label>Автоматическое</label>
+										<input class="input1" type="radio" name="upr" value="Автоматическое" id="automatic"
+											onclick="Automatic(this);" /><label class="label1">Автоматическое</label>
 									</p>
 									<div id="div_automatic" style="display: none;">
 										<p>
-											<input type="radio" name="automtype" id="an-motors"
-												value="AN-Motors" /><label>AN-Motors</label>
+											<input class="input1" type="radio" name="automtype" id="an-motors"
+												value="AN-Motors" /><label class="label1">AN-Motors</label>
 										</p>
 										<p>
-											<input type="radio" name="automtype" id="marantec" value="Marantec" /><label>Marantec</label>
+											<input class="input1" type="radio" name="automtype" id="marantec" value="Marantec" /><label class="label1">Marantec</label>
 										</p>
 									</div>
 									<script>
@@ -302,15 +302,15 @@ h1, h2, h3, h4, h5, h6, .site-title {
 										<h2>Тип монтажа</h2>
 										<img src="assets/templates/site_tpl/img/mounting.jpg" alt="" />
 										<p>
-											<input type="radio" name="mtype" value="1" checked="checked"
-												id="std_mount" /><label>стандартный монтаж</label>
+											<input class="input1" type="radio" name="mtype" value="1" checked="checked"
+												id="std_mount" /><label class="label1">стандартный монтаж</label>
 										</p>
 										<p>
-											<input type="radio" name="mtype" value="2" id="low_mount" /><label>низкий
+											<input class="input1" type="radio" name="mtype" value="2" id="low_mount" /><label class="label1">низкий
 												монтаж</label>
 										</p>
 										<p>
-											<input type="radio" name="mtype" value="3" id="high_mount" /><label>высокий
+											<input class="input1" type="radio" name="mtype" value="3" id="high_mount" /><label class="label1">высокий
 												монтаж <br> <span style="font-size: 75%;"> Размер перемычки 500
 													мм. Рекомендуется стандартный монтаж. </span>
 											</label>
@@ -319,34 +319,34 @@ h1, h2, h3, h4, h5, h6, .site-title {
 									<div>
 										<h2>Дополнительно</h2>
 										<p class="calc-other-text">
-											<label>Количество окон</label><input type="text" name="okna"
+											<label class="label1">Количество окон</label><input class="input1" type="text" name="okna"
 												id="windows" value="0" maxlength="4" />
 										</p>
 						
 										<div id="div_aqua">
-											<input type="checkbox" id="aqua" /><label>Комплект для влажных
+											<input class="input1" type="checkbox" id="aqua" /><label class="label1">Комплект для влажных
 												помещений</label>
 										</div>
 										<p>
 										
 										
 										<div id="div_zamok">
-											<input type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок
+											<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label class="label1">Замок
 												ригельный</label>
 										</div>
 										</p>
 										<p>
-											<input type="checkbox" name="kalitka" value="wicket" id="door"
-												onchange="Door(this);" /><label>Калитка</label>
+											<input class="input1" type="checkbox" name="kalitka" value="wicket" id="door"
+												onchange="Door(this);" /><label class="label1">Калитка</label>
 										</p>
 						
 										<div id="kalitka" style="display: none;">
 											<p>
-												<input type="radio" name="kaltype" value="1" id="door_std"
-													checked="checked" /> <label>стандартная</label>
+												<input class="input1" type="radio" name="kaltype" value="1" id="door_std"
+													checked="checked" /> <label class="label1">стандартная</label>
 											</p>
 											<p>
-												<input type="radio" name="kaltype" value="2" id="door_low" /> <label>с
+												<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label class="label1">с
 													низким порогом</label>
 											</p>
 										</div>
@@ -366,11 +366,11 @@ h1, h2, h3, h4, h5, h6, .site-title {
 								</script>
 						
 									</div>
-									<br> Ширина <br> <input type="text" size="10" name="width" id="width">
+									<br> Ширина <br> <input class="input1" type="text" size="10" name="width" id="width">
 									<br> 
-									<br> Высота <br> <input type="text" size="10" name="height" id="height"> 
+									<br> Высота <br> <input class="input1" type="text" size="10" name="height" id="height"> 
 									<br> <br> 
-									<input id="start" type="submit" value="Рассчитать стоимость" onclick="javascript:GetPrice()" />
+									<input class="input1" id="start" type="submit" value="Рассчитать стоимость" onclick="javascript:GetPrice()" />
 						
 									<script type="text/javascript">
 								function GetPrice(){
@@ -469,23 +469,23 @@ h1, h2, h3, h4, h5, h6, .site-title {
 								<div class="block_d">
 									<h2>Тип подвеса</h2>
 									<p>
-										<input type="checkbox" name="csx" id="podves_csx2"
-											onclick="click_csx(this);" /> <label>Телескопическое подвешение
+										<input class="input1" type="checkbox" name="csx" id="podves_csx2"
+											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
 											типа CS-2 <br>
 										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 500
 												мм.)</span>
-										</label> <br> <input type="checkbox" name="csx" id="podves_csx3"
-											onclick="click_csx(this);" /> <label>Телескопическое подвешение
+										</label> <br> <input class="input1" type="checkbox" name="csx" id="podves_csx3"
+											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
 											типа CS-3 <br>
 										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 800
 												мм.)</span>
-										</label> <br> <input type="checkbox" name="csx" id="podves_csx4"
-											onclick="click_csx(this);" /> <label>Телескопическое подвешение
+										</label> <br> <input class="input1" type="checkbox" name="csx" id="podves_csx4"
+											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
 											типа CS-4 <br>
 										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 800
 												мм.)</span>
-										</label> <br> <input type="checkbox" name="csx" id="podves_csx5"
-											onclick="click_csx(this);" /> <label>Телескопическое подвешение
+										</label> <br> <input class="input1" type="checkbox" name="csx" id="podves_csx5"
+											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
 											типа CS-5 <br>
 										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 800
 												мм.)</span>
