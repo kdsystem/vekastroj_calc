@@ -26,14 +26,14 @@
 		<h2>Дополнительно</h2>
 		<div id="div_dops">
 			<p class="p_class">
-			<div id="div_zamok">
-				<input type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок ригельный</label>
-			</div>
-			<br>
-			<div id="div_aqua">
-				<input type="checkbox" id="aqua" /><label>Комплект для влажных помещений</label>
-			</div>
-			<br> <input type="checkbox" name="kalitka" id="door" onchange="Door(this);" /><label>Калитка</label>
+				<div id="div_zamok">
+					<input type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок ригельный</label>
+				</div>
+				<br>
+				<div id="div_aqua">
+					<input type="checkbox" id="aqua" /><label>Комплект для влажных помещений</label>
+				</div>
+				<br> <input type="checkbox" name="kalitka" id="door" onchange="Door(this);" /><label>Калитка</label>
 			</p>
 			<div id="kalitka" style="display: none;">
 				<p class="p_class">
