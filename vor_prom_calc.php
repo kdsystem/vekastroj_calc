@@ -325,7 +325,7 @@
 	<div id="blok4">
 		<h2>Тип подвеса</h2>
 		<p class="p_class">
-			<select size="1" style="width:220px" id="springs">
+			<select size="1" style="width:240px" id="springs">
 				<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
 			    <option  value="podves_csx3">Телескопическое подвешение типа CS-3</option>
 			    <option  value="podves_csx4">Телескопическое подвешение типа CS-4</option>
