@@ -192,6 +192,16 @@
 			</p>			
 		</div>
 
+		<h2>Тип подвеса</h2>
+		<p class="p_class">
+			<select size="1" style="width:280px" id="podves_csx">
+				<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
+			    <option  value="podves_cs3">Телескопическое подвешение типа CS-3</option>
+			    <option  value="podves_cs4">Телескопическое подвешение типа CS-4</option>
+			    <option  value="podves_cs5">Телескопическое подвешение типа CS-5</option>
+			</select>
+		</p>
+
 		<h2>Доставка / монтаж</h2>
 		<p class="p_class">
 			<input type="checkbox" name="montazh" id="montazh" value="" /><label>Монтаж ворот</label>
@@ -309,16 +319,6 @@
 	</div>
 
 	<div id="blok4">
-		<h2>Тип подвеса</h2>
-		<p class="p_class">
-			<select size="1" style="width:280px" id="podves_csx">
-				<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
-			    <option  value="podves_cs3">Телескопическое подвешение типа CS-3</option>
-			    <option  value="podves_cs4">Телескопическое подвешение типа CS-4</option>
-			    <option  value="podves_cs5">Телескопическое подвешение типа CS-5</option>
-			</select>
-		
-		</p>
 	</div>
 </div>
 	<div id="kp" style="display: none;">
