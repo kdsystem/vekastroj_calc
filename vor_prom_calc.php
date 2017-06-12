@@ -247,12 +247,6 @@
 			var csx="none";
 			csx=document.getElementById("podves_csx").value;
 			alert(csx);
-//			if (document.getElementById("podves_csx2").checked ) { csx="csx2"};
-//			if (document.getElementById("podves_csx3").checked ) { csx="csx3"};
-//			if (document.getElementById("podves_csx4").checked ) { csx="csx4"};
-//			if (document.getElementById("podves_csx5").checked ) { csx="csx5"};
-			
-			
 			var springs="";
 			springs=document.getElementById("springs").value;
 			//alert(mtype);
@@ -338,46 +332,7 @@
 			    <option  value="podves_cs5">Телескопическое подвешение типа CS-5</option>
 			</select>
 		
-			<input type="checkbox" name="csx" id="podves_csx2"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-2 <br> <span style="font-size: 75%; margin-left: 25px">(высота
-					подвеса 500 мм.)</span>
-			</label> <br> <input type="checkbox" name="csx" id="podves_csx3"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-3 <br> <span style="font-size: 75%; margin-left: 25px">(высота
-					подвеса 800 мм.)</span>
-			</label> <br> <input type="checkbox" name="csx" id="podves_csx4"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-4 <br> <span style="font-size: 75%; margin-left: 25px">(высота
-					подвеса 800 мм.)</span>
-			</label> <br> <input type="checkbox" name="csx" id="podves_csx5"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-5 <br> <span style="font-size: 75%; margin-left: 25px">(высота
-					подвеса 800 мм.)</span>
-			</label>
 		</p>
-		<script>
-			function click_csx(csx)
-			{
-				//alert(csx.id);
-				if (csx.id =="podves_csx2" ) {
-					document.getElementById("podves_csx3").checked = false;
-					document.getElementById("podves_csx4").checked = false;
-					document.getElementById("podves_csx5").checked = false;
-				}
-				if (csx.id =="podves_csx3" ) {
-					document.getElementById("podves_csx2").checked = false;
-					document.getElementById("podves_csx4").checked = false;
-					document.getElementById("podves_csx5").checked = false;
-				}
-				if (csx.id =="podves_csx4" ) {
-					document.getElementById("podves_csx2").checked = false;
-					document.getElementById("podves_csx3").checked = false;
-					document.getElementById("podves_csx5").checked = false;
-				}
-				if (csx.id =="podves_csx5" ) {
-					document.getElementById("podves_csx2").checked = false;
-					document.getElementById("podves_csx3").checked = false;
-					document.getElementById("podves_csx4").checked = false;
-				}
-			}	
-		</script>
 	</div>
 </div>
 	<div id="kp" style="display: none;">
