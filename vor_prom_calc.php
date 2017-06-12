@@ -243,6 +243,16 @@
 
 			var mtype="";
 			mtype=document.getElementById("mtype").value;
+
+			var csx="none";
+			mtype=document.getElementById("podves_csx").value;
+			alert("podves_csx");
+//			if (document.getElementById("podves_csx2").checked ) { csx="csx2"};
+//			if (document.getElementById("podves_csx3").checked ) { csx="csx3"};
+//			if (document.getElementById("podves_csx4").checked ) { csx="csx4"};
+//			if (document.getElementById("podves_csx5").checked ) { csx="csx5"};
+			
+			
 			var springs="";
 			springs=document.getElementById("springs").value;
 			//alert(mtype);
@@ -300,11 +310,7 @@
 			var selected_color="white";
 			if (document.getElementById("color_white").checked ) { selected_color="white"};
 			if (document.getElementById("color_brown").checked ) { selected_color="brown"};
-			var csx="none";
-			if (document.getElementById("podves_csx2").checked ) { csx="csx2"};
-			if (document.getElementById("podves_csx3").checked ) { csx="csx3"};
-			if (document.getElementById("podves_csx4").checked ) { csx="csx4"};
-			if (document.getElementById("podves_csx5").checked ) { csx="csx5"};
+			
 			//alert(poddom);
 			//alert(maintype);
 			//var color=document.getElementById("height").value;
@@ -325,11 +331,11 @@
 	<div id="blok4">
 		<h2>Тип подвеса</h2>
 		<p class="p_class">
-			<select size="1" style="width:280px" id="springs">
+			<select size="1" style="width:280px" id="podves_csx">
 				<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
-			    <option  value="podves_csx3">Телескопическое подвешение типа CS-3</option>
-			    <option  value="podves_csx4">Телескопическое подвешение типа CS-4</option>
-			    <option  value="podves_csx5">Телескопическое подвешение типа CS-5</option>
+			    <option  value="podves_cs3">Телескопическое подвешение типа CS-3</option>
+			    <option  value="podves_cs4">Телескопическое подвешение типа CS-4</option>
+			    <option  value="podves_cs5">Телескопическое подвешение типа CS-5</option>
 			</select>
 		
 			<input type="checkbox" name="csx" id="podves_csx2"
