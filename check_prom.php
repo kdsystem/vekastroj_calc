@@ -292,6 +292,7 @@ echo '</td>';
 
 echo '</tr>';
 
+if ($springs !=0) {
 	echo '<tr>';
 	echo '<td>';
 	echo $txt_springs;
@@ -304,7 +305,7 @@ echo '</tr>';
 	echo $price_springs_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
-
+}
 
 
 if ($door=="door_std") {
