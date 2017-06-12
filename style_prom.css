@@ -27,8 +27,8 @@
 }
 .schema
 	.size{position:absolute;}
-	.size-w{left:210px;top:78px;}
-	.size-h{left:7px;top:253px;}
+	.size-w{left: 566px;top: 452px;}
+	.size-h{left: 363px;top: 627px;}
 	input[type="text"]{width:45px;height:14px;font-size:14px;font-weight:bold;text-align:center;padding:4px 0;background:#fff;border-color:#a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;border-style:solid;border-width:1px;}
 
 
