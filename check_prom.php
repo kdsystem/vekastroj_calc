@@ -1,5 +1,5 @@
 <?php
-$debugging=false;
+$debugging=true;
 //ну тут всё ясно
 $discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
