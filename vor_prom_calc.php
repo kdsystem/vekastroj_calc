@@ -246,7 +246,7 @@
 
 			var csx="none";
 			mtype=document.getElementById("podves_csx").value;
-			alert("podves_csx");
+			alert(podves_csx);
 //			if (document.getElementById("podves_csx2").checked ) { csx="csx2"};
 //			if (document.getElementById("podves_csx3").checked ) { csx="csx3"};
 //			if (document.getElementById("podves_csx4").checked ) { csx="csx4"};
