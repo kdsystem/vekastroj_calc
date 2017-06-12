@@ -86,20 +86,20 @@
 					<div id="div_dops">
 						<p>
 							<div id="div_zamok">
-								<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок ригельный</label>
+								<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label class="label1">Замок ригельный</label>
 							</div>
 							<br>
 							<div id="div_aqua">
-								<input class="input1" type="checkbox" id="aqua" /><label>Комплект для влажных помещений</label>
+								<input class="input1" type="checkbox" id="aqua" /><label class="label1">Комплект для влажных помещений</label>
 							</div>
-							<br> <input class="input1" type="checkbox" name="kalitka" id="door" onchange="Door(this);" /><label>Калитка</label>
+							<br> <input class="input1" type="checkbox" name="kalitka" id="door" onchange="Door(this);" /><label class="label1">Калитка</label>
 						</p>
 						<div id="kalitka" style="display: none;">
 							<p>
-								<input class="input1" type="radio" name="kaltype" value="1" id="door_std" checked="checked" /> <label>стандартная</label>
+								<input class="input1" type="radio" name="kaltype" value="1" id="door_std" checked="checked" /> <label class="label1">стандартная</label>
 							</p>
 							<p>
-								<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label>с низким порогом</label>
+								<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label class="label1">с низким порогом</label>
 							</p>
 							<script>
 								function Door(door) {
@@ -126,7 +126,7 @@
 						  </p>
 					</div>
 					<p>
-						<input class="input1" type="checkbox" id="poddom" value="" /> <label>Система защиты от поддомкрачивания</label>
+						<input class="input1" type="checkbox" id="poddom" value="" /> <label class="label1">Система защиты от поддомкрачивания</label>
 					</p>
 				</div>
 
@@ -135,10 +135,10 @@
 						<h2>Тип полотна</h2>
 						<ul class="type-els">
 							<li>
-								<input class="input1" class="input1" type="radio" name="poltype" id="poltype_1" checked="checked" onclick="handleClick(this);" /> <label>Гофр</label>
+								<input class="input1" class="input1" type="radio" name="poltype" id="poltype_1" checked="checked" onclick="handleClick(this);" /> <label class="label1">Гофр</label>
 							</li>
 							<li>
-								<input class="input1" class="input1" type="radio" name="poltype" id="poltype_4" onclick="handleClick(this);" /> <label>Микроволна</label>
+								<input class="input1" class="input1" type="radio" name="poltype" id="poltype_4" onclick="handleClick(this);" /> <label class="label1">Микроволна</label>
 							</li>
 						</ul>
 						<script>
@@ -154,16 +154,16 @@
 					<div id="div_upravlenie">
 						<h2>Управление</h2>
 						<p>
-							<input class="input1" type="radio" name="upr" id="manual" checked="checked" onclick="Automatic(this);" /><label>ручное управление</label> <br>
-							<input class="input1" type="radio" name="upr" id="reductor" onclick="Automatic(this);" /><label>привод цепной редукторный</label> <br>
-							<input class="input1" type="radio" name="upr" id="automatic" onclick="Automatic(this);" /><label>электропривод</label>
+							<input class="input1" type="radio" name="upr" id="manual" checked="checked" onclick="Automatic(this);" /><label class="label1">ручное управление</label> <br>
+							<input class="input1" type="radio" name="upr" id="reductor" onclick="Automatic(this);" /><label class="label1">привод цепной редукторный</label> <br>
+							<input class="input1" type="radio" name="upr" id="automatic" onclick="Automatic(this);" /><label class="label1">электропривод</label>
 						</p>
 						<div id="div_automatic" style="display: none;">
 							<p>
-								<input class="input1" type="radio" name="automtype" id="an-motors" value="AN-Motors" /><label>AN-Motors</label>
+								<input class="input1" type="radio" name="automtype" id="an-motors" value="AN-Motors" /><label class="label1">AN-Motors</label>
 							</p>
 							<p>
-								<input class="input1" type="radio" name="automtype" id="marantec" value="Marantec" /><label>Marantec</label>
+								<input class="input1" type="radio" name="automtype" id="marantec" value="Marantec" /><label class="label1">Marantec</label>
 							</p>
 						</div>
 						<script>
@@ -184,19 +184,19 @@
 					<div class="winqty">
 						<h2>Количество окон</h2>
 
-							<input class="input1" type="radio" name="okna" id="windows_0" checked="checked" /> <label>0</label>
+							<input class="input1" type="radio" name="okna" id="windows_0" checked="checked" /> <label class="label1">0</label>
 
 
-							<input class="input1" type="radio" name="okna" id="windows_1" /> <label>1</label>
+							<input class="input1" type="radio" name="okna" id="windows_1" /> <label class="label1">1</label>
 
 						<p>
-							<input class="input1" type="radio" name="okna" id="windows_2" /> <label>2</label>
+							<input class="input1" type="radio" name="okna" id="windows_2" /> <label class="label1">2</label>
 						</p>
 						<p>
-							<input class="input1" type="radio" name="okna" id="windows_3" /> <label>3</label>
+							<input class="input1" type="radio" name="okna" id="windows_3" /> <label class="label1">3</label>
 						</p>
 						<p>
-							<input class="input1" type="radio" name="okna" id="windows_4" /> <label>4</label>
+							<input class="input1" type="radio" name="okna" id="windows_4" /> <label class="label1">4</label>
 						</p>
 					</div>
 			
@@ -204,9 +204,9 @@
 					<h2>Цвет</h2>
 			
 					<input class="input1" type="radio" name="vcolor" id="color_white"
-									onclick="Click_color(this);" checked="checked" /><label>белый RAL9016</label> <br> <input class="input1"
+									onclick="Click_color(this);" checked="checked" /><label class="label1">белый RAL9016</label> <br> <input class="input1"
 									type="radio" name="vcolor" id="color_brown"
-									onclick="Click_color(this);" /><label>коричневый RAL8014</label>
+									onclick="Click_color(this);" /><label class="label1">коричневый RAL8014</label>
 					<script>
 						function Click_color(color) {
 							if (color.id == "1") {
@@ -253,11 +253,11 @@
 			
 					<h2>Доставка / монтаж</h2>
 					<p>
-						<input class="input1" type="checkbox" name="montazh" id="montazh" value="" /><label>Монтаж ворот</label>
+						<input class="input1" type="checkbox" name="montazh" id="montazh" value="" /><label class="label1">Монтаж ворот</label>
 					</p>
 					<p>
 						<input class="input1" type="checkbox" name="dostavka" value="" data-value="delivery"
-										id="delivery" onclick="Delivery(this);" /><label>Доставка</label>
+										id="delivery" onclick="Delivery(this);" /><label class="label1">Доставка</label>
 					</p>
 					<script>
 						function Delivery(delivery) {
@@ -277,14 +277,14 @@
 			
 					<div id="dostavka" style="display: none;">
 						<p>
-							<input class="input1" type="radio" name="city" id="outofkad" value="abroad" onclick="Delivery(this);" /> <label>За пределами КАД</label>
+							<input class="input1" type="radio" name="city" id="outofkad" value="abroad" onclick="Delivery(this);" /> <label class="label1">За пределами КАД</label>
 						</p>
 						<p>						
 							<div id="kad" style="display: none;">
 								<input class="input1" type="text" id="km" name="kad" value="" maxlength="4" /> км.
 							</div>
 						<p>
-							<input class="input1" type="radio" name="city" id="city" value="" onclick="Delivery(this);" /> <label>По городу</label>
+							<input class="input1" type="radio" name="city" id="city" value="" onclick="Delivery(this);" /> <label class="label1">По городу</label>
 						</p>
 					</div>
 					<br>
