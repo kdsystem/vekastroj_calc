@@ -66,7 +66,6 @@
 			    	<option  value="2">усиленные пружины до 50000 циклов</option>
 			    	<option  value="3">усиленные пружины до 75000 циклов</option>
 			    	<option  value="4">усиленные пружины до 100000 циклов</option>
-			    	
 			    </select>
 		</div>
 		<p class="p_class">
@@ -326,21 +325,24 @@
 	<div id="blok4">
 		<h2>Тип подвеса</h2>
 		<p class="p_class">
+			<select size="1" style="width:200px" id="springs">
+				<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
+			    <option  value="podves_csx3">Телескопическое подвешение типа CS-3</option>
+			    <option  value="podves_csx4">Телескопическое подвешение типа CS-4</option>
+			    <option  value="podves_csx5">Телескопическое подвешение типа CS-5</option>
+			</select>
+		
 			<input type="checkbox" name="csx" id="podves_csx2"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа
-				CS-2 <br> <span style="font-size: 75%; margin-left: 25px">(высота
+				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-2 <br> <span style="font-size: 75%; margin-left: 25px">(высота
 					подвеса 500 мм.)</span>
 			</label> <br> <input type="checkbox" name="csx" id="podves_csx3"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа
-				CS-3 <br> <span style="font-size: 75%; margin-left: 25px">(высота
+				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-3 <br> <span style="font-size: 75%; margin-left: 25px">(высота
 					подвеса 800 мм.)</span>
 			</label> <br> <input type="checkbox" name="csx" id="podves_csx4"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа
-				CS-4 <br> <span style="font-size: 75%; margin-left: 25px">(высота
+				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-4 <br> <span style="font-size: 75%; margin-left: 25px">(высота
 					подвеса 800 мм.)</span>
 			</label> <br> <input type="checkbox" name="csx" id="podves_csx5"
-				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа
-				CS-5 <br> <span style="font-size: 75%; margin-left: 25px">(высота
+				onclick="click_csx(this);" /> <label>Телескопическое подвешение типа CS-5 <br> <span style="font-size: 75%; margin-left: 25px">(высота
 					подвеса 800 мм.)</span>
 			</label>
 		</p>
