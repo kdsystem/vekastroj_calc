@@ -480,7 +480,7 @@ if ($upr == "reductor") {
 }
 
 
-if ($csx !="0") {
+if ($csx !="podves_cs2") {
 	echo '<tr>';
 	echo '<td>';
 	echo $price_csx_text;
