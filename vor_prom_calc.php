@@ -243,7 +243,7 @@
 
 			var mtype="";
 			mtype=document.getElementById("mtype").value;
-			alert(mtype);
+			//alert(mtype);
 			var csx="none";
 			csx=document.getElementById("podves_csx").value;
 			var springs="";

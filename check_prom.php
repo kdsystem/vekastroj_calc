@@ -1,5 +1,5 @@
 <?php
-$debugging=true;
+$debugging=false;
 //ну тут всё ясно
 $discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
@@ -210,25 +210,25 @@ if ($aqua != "none") {
 if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.05;}
 else {$price=$csvdata[4];}
 
-if ($mtype="mtype_1") {$price_mtype=0;
+if ($mtype=="mtype_1") {$price_mtype=0;
 $mtype_text="стандартный монтаж";};
-if ($mtype="mtype_2") {$price_mtype=$csvdata[4]*0.06;
+if ($mtype=="mtype_2") {$price_mtype=$csvdata[4]*0.06;
 $mtype_text="низкий мотаж (барабан сзади)";};
-if ($mtype="mtype_3") {$price_mtype=$csvdata[4]*0.07;
+if ($mtype=="mtype_3") {$price_mtype=$csvdata[4]*0.07;
 $mtype_text="наклонный монтаж (до 45°)";};
-if ($mtype="mtype_4") {$price_mtype=$csvdata[4]*0.08;
+if ($mtype=="mtype_4") {$price_mtype=$csvdata[4]*0.08;
 $mtype_text="наклонный низкий монтаж (до 45°)";};
-if ($mtype="mtype_5") {$price_mtype=$csvdata[4]*0.1;
+if ($mtype=="mtype_5") {$price_mtype=$csvdata[4]*0.1;
 $mtype_text="наклонный высокий с верхним расположением вала (до 45°)";};
-if ($mtype="mtype_6") {$price_mtype=$csvdata[4]*0.1;
+if ($mtype=="mtype_6") {$price_mtype=$csvdata[4]*0.1;
 $mtype_text="наклонный высокий с нижним расположением вала (до 45°)";};
-if ($mtype="mtype_7") {$price_mtype=$csvdata[4]*0.08;
+if ($mtype=="mtype_7") {$price_mtype=$csvdata[4]*0.08;
 $mtype_text="высокий монтаж с верхним расположением вала";};
-if ($mtype="mtype_8") {$price_mtype=$csvdata[4]*0.1;
+if ($mtype=="mtype_8") {$price_mtype=$csvdata[4]*0.1;
 $mtype_text="высокий монтаж с нижним расположением вала";};
-if ($mtype="mtype_9") {$price_mtype=$csvdata[4]*0.1;
+if ($mtype=="mtype_9") {$price_mtype=$csvdata[4]*0.1;
 $mtype_text="вертикальный монтаж с верхним расположением вала";};
-if ($mtype="mtype_10") {$price_mtype=$csvdata[4]*0.1;
+if ($mtype=="mtype_10") {$price_mtype=$csvdata[4]*0.1;
 $mtype_text="вертикальный монтаж с нижним расположением вала";};
 
 if ($springs==0) { $txt_springs='стандартные торсионные пружины на 25000 циклов';};
