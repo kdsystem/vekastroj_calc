@@ -480,13 +480,13 @@ if ($upr == "reductor") {
 }
 
 
-if ($csx !="none") {
+if ($csx !="0") {
 	echo '<tr>';
 	echo '<td>';
 	echo $price_csx_text;
 	echo '</td>';
 	echo '<td>';
-	echo $price_csx." 1руб.";
+	echo $price_csx." руб.";
 	echo '</td>';
 	echo '</tr>';
 }
