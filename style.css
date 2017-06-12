@@ -1,68 +1,68 @@
 .p_class{	
-	border: 1px solid red;
+	
 	width: 100%;
 	height:800px;
 	
 }
 
 #parameters{
-	border: 1px solid red;
+	
 	width: 100%;
 	height:800px;
 }
 #parameters
 .block_a{
-	border: 1px solid red;
+	
 	width: 210px;
 	height: 100%;
 	float: left;	
 }
 .block_b {
-	border: 1px solid red;
+	
 	width: 210px;
 	height: 100%;
 	float: left;
 }
 .block_c {
-	border: 1px solid red;
+	
 	width: 210px;
 	height: 100%;
 	float: left;
 }
 #block_d {
-	border: 1px solid red;
+	
 	width: 300px;
 	height: 100%;	
 	float: left;
 }
 
 #kp{
-	border: 1px solid red;
+	
 	width: 100%;
 	height:800px;
 }
 
 #blok1 {
-	border: 1px solid red;
+	
 	width: 210px;
 	height: 780px;
 	float: left;
 }
 
 #blok2 {
-	border: 1px solid red;
+	
 	width: 210px;
 	height: 780px;
 	float: left;
 }
 #blok3 {
-	border: 1px solid red;
+	
 	width: 210px;
 	height: 860px;
 	float: left;
 }
 #blok4 {
-	border: 1px solid red;
+	
 	width: 300px;
 	height: 860px;
 	float: left;
