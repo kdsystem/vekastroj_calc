@@ -239,16 +239,12 @@
 						помещений</label>
 				</div>
 				<p>
-				
-				
-				<div id="div_zamok">
-					<input type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок
-						ригельный</label>
-				</div>
+					<div id="div_zamok">
+						<input type="checkbox" name="rigel" value="bolt" id="zamok" /><label>Замок ригельный</label>
+					</div>
 				</p>
 				<p>
-					<input type="checkbox" name="kalitka" value="wicket" id="door"
-						onchange="Door(this);" /><label>Калитка</label>
+					<input type="checkbox" name="kalitka" value="wicket" id="door" onchange="Door(this);" /><label>Калитка</label>
 				</p>
 
 				<div id="kalitka" style="display: none;">
