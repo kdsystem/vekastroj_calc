@@ -248,6 +248,7 @@
 			csx=document.getElementById("podves_csx").value;
 			var springs="";
 			springs=document.getElementById("springs").value;
+			alert(springs);
 			var montazh="none";
 			if (document.getElementById("montazh").checked ) { montazh="yes";}
 			var dostavka="none";
