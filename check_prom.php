@@ -158,7 +158,7 @@ if ($upr == "automatic") {
 		$price_automatic=28100;
 		$price_automatic_text="ASI100KIT Электропривод с цепью ручного управления и набором кабелей, внешний блок управления CUID-230, монтажный комплект.";
 	}
-	if ($poddom !='none') {$price_poddom=1274;};
+	if ($poddom !="none") {$price_poddom=1274;};
 }
 
 if ($dostavka<>"none"){
