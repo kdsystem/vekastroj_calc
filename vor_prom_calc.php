@@ -241,8 +241,9 @@
 		</div>
 
 
-		<br> <br> <input id="start" type="submit" value="Рассчитать стоимость"
-			onclick="javascript:GetPrice()" />
+		<br>
+		<br> 
+		<input id="start" type="submit" value="Рассчитать стоимость" onclick="javascript:GetPrice()" />
 
 		<script type="text/javascript">
 		function GetPrice(){
@@ -250,7 +251,6 @@
 			if (document.getElementById("poltype_1").checked ) { poltype="s_gofr";}
 			if (document.getElementById("poltype_4").checked ) { poltype="wave";}
 			//alert(poltype);
-
 			var mtype="";
 			mtype=document.getElementById("mtype").value;
 			//alert(mtype);
@@ -318,8 +318,6 @@
 	</script>
 	</div>
 
-	<div id="blok4">
-	</div>
 </div>
 	<div id="kp" style="display: none;">
 		<div id="res" class="res">
