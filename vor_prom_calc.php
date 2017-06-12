@@ -243,14 +243,11 @@
 
 			var mtype="";
 			mtype=document.getElementById("mtype").value;
-
+			alert(mtype);
 			var csx="none";
 			csx=document.getElementById("podves_csx").value;
-			alert(csx);
 			var springs="";
 			springs=document.getElementById("springs").value;
-			//alert(mtype);
-			
 			var montazh="none";
 			if (document.getElementById("montazh").checked ) { montazh="yes";}
 			var dostavka="none";
@@ -273,20 +270,12 @@
 				if (document.getElementById("an-motors").checked ) {mech="an-motors"};
 				if (document.getElementById("marantec").checked ) {mech="marantec"};
 			}
-			//alert(upr);
-			//var mount_type="none";
-			//if (document.getElementById("std_mount").checked) {mount_type="std_mount";}
-			//if (document.getElementById("low_mount").checked) {mount_type="low_mount";}
-			//if (document.getElementById("high_mount").checked) {mount_type="high_mount";}
-			//alert(mount_type);
 			var aqua="none";
 			if (document.getElementById("aqua").checked) {aqua="yes"};
 			var poddom="none";
 			if (document.getElementById("poddom").checked) {poddom="yes"};
-			//alert(aqua);
 			var zamok="none";
 			if (document.getElementById("zamok").checked) {zamok="yes"};
-			//alert(zamok);
 			var kalitka="none";
 			if (document.getElementById("door").checked ) {
 				if (document.getElementById("door_std").checked) {kalitka="door_std"};
@@ -298,16 +287,12 @@
 			if (document.getElementById("windows_2").checked) {windows=2};
 			if (document.getElementById("windows_3").checked) {windows=3};
 			if (document.getElementById("windows_4").checked) {windows=4};
-			//document.getElementById("windows").value;
 			var width=document.getElementById("width").value;
 			var height=document.getElementById("height").value;
 			var selected_color="white";
 			if (document.getElementById("color_white").checked ) { selected_color="white"};
 			if (document.getElementById("color_brown").checked ) { selected_color="brown"};
 			
-			//alert(poddom);
-			//alert(maintype);
-			//var color=document.getElementById("height").value;
 			document.getElementById("kp").style= "display: inline-block;";
 			document.getElementById("parameters").style= "display: none;";
 		    $.ajax({
