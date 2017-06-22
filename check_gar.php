@@ -178,7 +178,7 @@ if ($csx=="podves_cs5"){
 	$price_csx=824;
 	$price_csx_text="Телескопическое подвешение типа CS-5";
 }
-}
+
 echo '<input id="back" type="submit" value="Назад" onclick="javascript:Back()" />
 <script type="text/javascript">
 function Back(){
