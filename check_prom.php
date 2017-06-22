@@ -175,19 +175,19 @@ if ($upr == "reductor"){
 	$price_reductor=6517;
 }
 
-if ($csx=="csx2"){
+if ($csx=="podves_cs2"){
 	$price_csx=225;
 	$price_csx_text="Телескопическое подвешение типа CS-2";
 }
-if ($csx=="csx3"){
+if ($csx=="podves_cs3"){
 	$price_csx=300;
 	$price_csx_text="Телескопическое подвешение типа CS-3";
 }
-if ($csx=="csx4"){
+if ($csx=="podves_cs4"){
 	$price_csx=450;
 	$price_csx_text="Телескопическое подвешение типа CS-4";
 }
-if ($csx=="csx5"){
+if ($csx=="podves_cs5"){
 	$price_csx=824;
 	$price_csx_text="Телескопическое подвешение типа CS-5";
 }
