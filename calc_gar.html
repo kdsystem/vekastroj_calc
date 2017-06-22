@@ -425,10 +425,7 @@ h1, h2, h3, h4, h5, h6, .site-title {
 									if (document.getElementById("11").checked ) { selected_color="vishnya";}
 						
 									var csx="none";
-									if (document.getElementById("podves_csx2").checked ) { csx="csx2";}
-									if (document.getElementById("podves_csx3").checked ) { csx="csx3";}
-									if (document.getElementById("podves_csx4").checked ) { csx="csx4";}
-									if (document.getElementById("podves_csx5").checked ) { csx="csx5";}
+									csx = document.getElementById("podves_csx").value;
 						
 									document.getElementById("kp").style= "display: inline-block;";
 									document.getElementById("parameters").style= "display: none;";
@@ -449,27 +446,12 @@ h1, h2, h3, h4, h5, h6, .site-title {
 								<div class="block_d">
 									<h2>Тип подвеса</h2>
 									<p>
-										<input class="input1" type="checkbox" name="csx" id="podves_csx2"
-											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
-											типа CS-2 <br>
-										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 500
-												мм.)</span>
-										</label> <br> <input class="input1" type="checkbox" name="csx" id="podves_csx3"
-											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
-											типа CS-3 <br>
-										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 800
-												мм.)</span>
-										</label> <br> <input class="input1" type="checkbox" name="csx" id="podves_csx4"
-											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
-											типа CS-4 <br>
-										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 800
-												мм.)</span>
-										</label> <br> <input class="input1" type="checkbox" name="csx" id="podves_csx5"
-											onclick="click_csx(this);" /> <label class="label1">Телескопическое подвешение
-											типа CS-5 <br>
-										<span style="font-size: 75%; margin-left: 25px">(высота подвеса 800
-												мм.)</span>
-										</label>
+										<select size="1" style="width:280px" id="podves_csx">
+											<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
+										    <option value="podves_cs3">Телескопическое подвешение типа CS-3</option>
+										    <option value="podves_cs4">Телескопическое подвешение типа CS-4</option>
+										    <option value="podves_cs5">Телескопическое подвешение типа CS-5</option>
+										</select>
 									</p>
 									<script>
 									function click_csx(csx)
