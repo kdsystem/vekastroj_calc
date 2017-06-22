@@ -1,4 +1,8 @@
 <?php
+$debugging=true;
+//ну тут всё ясно
+$discount = 0.3;
+$ip=$_SERVER['REMOTE_ADDR'];
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
@@ -433,79 +437,59 @@ echo '</table>';
 echo "<br>";
 
 echo "<br>";
-//echo"Монтаж =".$montazh;
-//echo "<br>";
-//echo"Доставка =".$dostavka;
-//echo "<br>";
-//echo"км =".$km;
-//echo "<br>";
-//echo"Управление =".$upr;
-//echo "<br>";
-//echo"Тип установки =".$mount_type;
-//echo "<br>";
-//echo"Антикор =".$antikor;
-//echo "<br>";
-//echo"Редуктор =".$reductor;
-//echo "<br>";
-//echo"Замок =".$zamok;
-//echo "<br>";
-//echo"Окна =".$windows;
-//echo "<br>";
-//echo"Калитка =".$door;
-
-echo "<br>";
-echo "Файл для расчетов =".$yourcsvfile;
-echo "<br>";
-//$price = $price + $csvdata [4];
-//echo "Цена изделия " . $price_multi;
-//echo "<br>";
-//echo "Цена за дверь " . $price_door;
-//echo "<br>";
-//echo "Цена за антикор " . $price_aqua;
-//echo "<br>";
-//echo "Цена за замок " . $price_zamok;
-//echo "<br>";
-//echo "Цена за окна " . $price_windows;
-//echo "<br>";
-//echo "Цена за доставку " . $price_dostavka;
-//echo "<br>";
-//echo "Цена за управление " . $price_upr;
-//echo "<br>";
-//echo "Цена за тип установки " . $price_mounttype;
-//echo "<br>";
-//if ($door=="door_std"){echo "Выбрана стандартная дверь";echo "<br>";}
-//if ($door=="door_low"){echo "Выбрана дверь с низким порогом";echo "<br>";}
-
-//if ($montazh<>"none") {
-//	if ($upr=="manual") {
-//		echo "Стоимость монтажа ворот с ручным управлением ".$price_upr;
-//		echo "<br>";
-//	}
-//	else{
-//		echo "Стоимость монтажа ворот с электроприводом ".$price_upr;
-//		echo "<br>";
-//	}
-//}
-
-//if ($dostavka<>"none"){
-//	if ($dostavka<>"city"){
-//		$price_dostavka=700+$km*30;
-//		echo "Стоимость доставки за ".$km." км. от города ".$price_dostavka;
-//		echo "<br>";
-//	}
-//	else {
-//		echo "Стоимость доставки в черте города ".$price_dostavka;
-//		echo "<br>";
-//	}
-//}
 
 
-//echo "Ширина =" . $csvdata [2];
-//echo "<br>";
-//echo "Высота =" . $csvdata [3];
-//echo "<br>";
-// echo"Цена при нестандартном размере=".$csvdata[4];
-//echo "<br>";
-
-//echo $csvdata[0];
+if ($debugging){
+	echo "<br>";
+	echo "Файл для расчетов =".$yourcsvfile;
+	echo "<br>";	
+	echo"Высота =".$height;
+	echo "<br>";
+	echo"Ширина =".$width;
+	echo "<br>";
+	echo 'цвет ='.$selected_color;
+	echo "<br>";
+	echo 'полотно '.$poltype;
+	echo "<br>";
+	echo 'aqua ='.$aqua;
+	echo "<br>";
+	echo"Монтаж =".$montazh;
+	echo "<br>";
+	echo"Доставка =".$dostavka;
+	echo "<br>";
+	echo"км =".$km;
+	echo "<br>";
+	echo"Управление =".$upr;
+	echo "<br>";
+	echo"Тип установки =".$mtype;
+	echo "<br>";
+	//echo"Антикор =".$antikor;
+	//echo "<br>";
+	echo"Редуктор =".$reductor;
+	echo "<br>";
+	echo"Замок =".$zamok;
+	echo "<br>";
+	echo"Окна =".$windows;
+	echo "<br>";
+	echo"Калитка =".$door;
+	echo "<br>";
+	echo"Аква =".$aqua;
+	
+	echo "<br>";
+	echo"springs =".$springs;
+	
+	echo "<br>";
+	echo"csx =".$csx;
+	echo "<br>";
+	echo"price_poddom_discount =".$price_poddom_discount;
+	echo "<br>";
+	echo"poddom =".$poddom;
+	echo "<br>";
+	
+	//echo "Ширина =" . $csvdata [2];
+	//echo "<br>";
+	//echo "Высота =" . $csvdata [3];
+	echo "<br>";
+	echo 'IP='; echo $ip;
+}
 ?>
