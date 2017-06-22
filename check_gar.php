@@ -390,6 +390,7 @@ if ($upr == "automatic") {
 		echo '</td>';
 	}
 	echo '</tr>';
+}
 
 
 if ($dostavka<>"none"){
