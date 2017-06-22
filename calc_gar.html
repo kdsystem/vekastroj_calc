@@ -248,14 +248,14 @@ h1, h2, h3, h4, h5, h6, .site-title {
 								</div>
 						
 								<div class="block_c">
-									<h2>РЈРїСЂР°РІР»РµРЅРёРµ</h2>
+									<h2>Управление</h2>
 									<p>
-										<input class="input1" type="radio" name="upr" value="Р СѓС‡РЅРѕРµ" id="manual"
-											checked="checked" onclick="Automatic(this);" /><label class="label1">Р СѓС‡РЅРѕРµ</label>
+										<input class="input1" type="radio" name="upr" value="Ручное" id="manual"
+											checked="checked" onclick="Automatic(this);" /><label class="label1">Ручное</label>
 									</p>
 									<p>
-										<input class="input1" type="radio" name="upr" value="РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ" id="automatic"
-											onclick="Automatic(this);" /><label class="label1">РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ</label>
+										<input class="input1" type="radio" name="upr" value="Автоматическое" id="automatic"
+											onclick="Automatic(this);" /><label class="label1">Автоматическое</label>
 									</p>
 									<div id="div_automatic" style="display: none;">
 										<p>
@@ -297,37 +297,55 @@ h1, h2, h3, h4, h5, h6, .site-title {
 										</p>
 									</div>
 									<div>
-										<h2>Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ</h2>
+										<h2>Тип монтажа</h2>
+										
+										<p>
+											<input class="input1" type="radio" name="mtype" value="1" checked="checked"
+												id="std_mount" /><label class="label1">стандартный монтаж</label>
+										</p>
+										<p>
+											<input class="input1" type="radio" name="mtype" value="2" id="low_mount" /><label class="label1">низкий
+												монтаж</label>
+										</p>
+										<p>
+											<input class="input1" type="radio" name="mtype" value="3" id="high_mount" /><label class="label1">высокий
+												монтаж <br> <span style="font-size: 75%;"> Размер перемычки 500
+													мм. Рекомендуется стандартный монтаж. </span>
+											</label>
+										</p>
+									</div>
+									<div>
+										<h2>Дополнительно</h2>
 										<p class="calc-other-text">
-											<label class="label1">РљРѕР»РёС‡РµСЃС‚РІРѕ РѕРєРѕРЅ</label><input class="input1" type="text" name="okna"
+											<label class="label1">Количество окон</label><input class="input1" type="text" name="okna"
 												id="windows" value="0" maxlength="4" width=""/>
 										</p>
 						
 										<div id="div_aqua">
-											<input class="input1" type="checkbox" id="aqua" /><label class="label1">РљРѕРјРїР»РµРєС‚ РґР»СЏ РІР»Р°Р¶РЅС‹С…
-												РїРѕРјРµС‰РµРЅРёР№</label>
+											<input class="input1" type="checkbox" id="aqua" /><label class="label1">Комплект для влажных
+												помещений</label>
 										</div>
 										<p>
 										
 										
 										<div id="div_zamok">
-											<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label class="label1">Р—Р°РјРѕРє
-												СЂРёРіРµР»СЊРЅС‹Р№</label>
+											<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label class="label1">Замок
+												ригельный</label>
 										</div>
 										</p>
 										<p>
 											<input class="input1" type="checkbox" name="kalitka" value="wicket" id="door"
-												onchange="Door(this);" /><label class="label1">РљР°Р»РёС‚РєР°</label>
+												onchange="Door(this);" /><label class="label1">Калитка</label>
 										</p>
 						
 										<div id="kalitka" style="display: none;">
 											<p>
 												<input class="input1" type="radio" name="kaltype" value="1" id="door_std"
-													checked="checked" /> <label class="label1">СЃС‚Р°РЅРґР°СЂС‚РЅР°СЏ</label>
+													checked="checked" /> <label class="label1">стандартная</label>
 											</p>
 											<p>
-												<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label class="label1">СЃ
-													РЅРёР·РєРёРј РїРѕСЂРѕРіРѕРј</label>
+												<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label class="label1">с
+													низким порогом</label>
 											</p>
 										</div>
 						
