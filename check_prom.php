@@ -279,20 +279,21 @@ echo $price_discount.' руб.';
 echo '</td>';
 echo '</tr>';
 
-echo '<tr>';
-echo '<td>';
-echo $mtype_text;
-echo '</td>';
-echo '<td>';
-echo $price_mtype.' руб.';
-echo '</td>';
-$price_mtype_discount=$price_mtype*(1-$discount);
-echo '<td>';
-echo $price_mtype_discount.' руб.';
-echo '</td>';
-
-echo '</tr>';
-
+if ($mtype != "mtype_1") {
+	echo '<tr>';
+	echo '<td>';
+	echo $mtype_text;
+	echo '</td>';
+	echo '<td>';
+	echo $price_mtype.' руб.';
+	echo '</td>';
+	$price_mtype_discount=$price_mtype*(1-$discount);
+	echo '<td>';
+	echo $price_mtype_discount.' руб.';
+	echo '</td>';
+	
+	echo '</tr>';
+}
 if ($springs !=0) {
 	echo '<tr>';
 	echo '<td>';
