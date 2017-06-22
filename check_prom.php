@@ -4,7 +4,7 @@ $debugging=false;
 $discount = 0.3;
 $ip=$_SERVER['REMOTE_ADDR'];
 
-function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
+function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
 	$csvxrow [0] = str_replace ( $encl, '', $csvxrow [0] );
@@ -93,7 +93,7 @@ $mtype = $_REQUEST['mtype'];
 $zamok = $_REQUEST['zamok'];
 $windows = $_REQUEST['windows'];
 $door = $_REQUEST['kalitka'];
-$reductor= $_REQUEST['reductor'];
+//$reductor= $_REQUEST['reductor'];
 $csx=$_REQUEST['csx'];
 $aqua=$_REQUEST['aqua'];
 $springs=$_REQUEST['springs'];
@@ -120,7 +120,8 @@ $price_csx_text="";
 $price_reductor=0;
 $price_springs=0;
 $txt_springs="";
-
+$price_automatic=0;
+$price_automatic_dop=0;
 
 if ($maintype="proplus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
@@ -557,4 +558,33 @@ if ($debugging){
 	echo 'IP='; echo $ip;
 	echo '</div>';
 }
+
+if (isset($_REQUEST['email']))  {
+	
+	//Email information
+	$admin_email = "kdsystem@gmail.com";
+	$email = $_REQUEST['email'];
+	$subject = $_REQUEST['subject'];
+	$comment = $_REQUEST['comment'];
+	
+	//send email
+	mail($admin_email, "$subject", $comment, "From:" . $email);
+	
+	//Email response
+	echo "Thank you for contacting us!";
+}
+
+//if "email" variable is not filled out, display the form
+else  {
+	?>
+ <form method="post">
+  Email: <input name="email" type="text" /><br />
+  Subject: <input name="subject" type="text" /><br />
+  Message:<br />
+  <textarea name="comment" rows="15" cols="40"></textarea><br />
+  <input type="submit" value="Submit" />
+  </form>
+  
+<?php
+  }
 ?>

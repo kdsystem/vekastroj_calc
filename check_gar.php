@@ -1,5 +1,5 @@
 <?php
-function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig, $type) {
+function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig) {
 	$csvxrow = file ( $url );
 	$csvxrow [0] = chop ( $csvxrow [0] );
 	$csvxrow [0] = str_replace ( $encl, '', $csvxrow [0] );
@@ -62,7 +62,7 @@ function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $hei
 			$price,
 			$height_near,
 			$width_near,
-			$price_near 
+			$price_near
 	);
 }
 
@@ -85,7 +85,7 @@ $mount_type = $_REQUEST['mount_type'];
 $zamok = $_REQUEST['zamok'];
 $windows = $_REQUEST['windows'];
 $door = $_REQUEST['kalitka'];
-$reductor= $_REQUEST['reductor'];
+//$reductor= $_REQUEST['reductor'];
 $aqua=$_REQUEST['aqua'];
 $csx=$_REQUEST['csx'];
 $price=0;
@@ -150,7 +150,7 @@ if ($montazh != "none") {
 if ($dostavka<>"none"){
 	if ($dostavka<>"city"){
 		$price_dostavka=700+$km*30;
-		//$price=$price+700+$km*30;	
+		//$price=$price+700+$km*30;
 	}
 	else {
 		$price_dostavka=1000;
@@ -180,24 +180,24 @@ function Back(){
 
 if ($maintype == "classic") {
 	//if ($poltype == "s_gofr") {
-		if (($selected_color == "golddub") or ($selected_color == "darkdub") or ($selected_color == "vishnya")) {
-			// только эти три цвета
-			$yourcsvfile = "vor_gar_classic_gd_dd_v.csv";
-		} else {
-			// оставшиеся цвета
-			$yourcsvfile = "vor_gar_classic.csv";
-		}
+	if (($selected_color == "golddub") or ($selected_color == "darkdub") or ($selected_color == "vishnya")) {
+		// только эти три цвета
+		$yourcsvfile = "vor_gar_classic_gd_dd_v.csv";
+	} else {
+		// оставшиеся цвета
+		$yourcsvfile = "vor_gar_classic.csv";
+	}
 	//}
 } else {
 	//echo("111111111111");
 	//if ($poltype == "s_gofr") {
-		if (($selected_color == "golddub") or ($selected_color == "darkdub") or ($selected_color == "vishnya")) {
-			// только эти три цвета
-			$yourcsvfile = "vor_gar_trend_gd_dd_v.csv";
-		} else {
-			// оставшиеся цвета
-			$yourcsvfile = "vor_gar_trend.csv";
-		}
+	if (($selected_color == "golddub") or ($selected_color == "darkdub") or ($selected_color == "vishnya")) {
+		// только эти три цвета
+		$yourcsvfile = "vor_gar_trend_gd_dd_v.csv";
+	} else {
+		// оставшиеся цвета
+		$yourcsvfile = "vor_gar_trend.csv";
+	}
 	//}
 }
 
@@ -309,25 +309,25 @@ echo '</tr>';
 echo '<tr>';
 if ($mount_type=='low_mount' ) {echo '<td>'; echo"Выбран низкий монтаж";
 echo '</td>';
-	echo '<td>';
-		echo $price_mounttype;
-	echo '</td>';}
+echo '<td>';
+echo $price_mounttype;
+echo '</td>';}
 if ($mount_type=='high_mount' ) {echo '<td>'; echo"Выбран высокий монтаж";
 echo '</td>';
-	echo '<td>';
-		echo $price_mounttype;
-	echo '</td>';
+echo '<td>';
+echo $price_mounttype;
+echo '</td>';
 }
 echo '</tr>';
 
 if ($door=="door_std") {
 	echo '<tr>';
-		echo '<td>';
-			echo 'Встроенная калитка (стандартная)';
-		echo '</td>';
-		echo '<td>';
-		echo $price_door.' руб.';
-		echo '</td>';
+	echo '<td>';
+	echo 'Встроенная калитка (стандартная)';
+	echo '</td>';
+	echo '<td>';
+	echo $price_door.' руб.';
+	echo '</td>';
 	echo '</tr>';
 }
 
@@ -387,7 +387,7 @@ if ($montazh<>"none") {
 if ($windows!=0) {
 	echo '<tr>';
 	echo '<td>';
-		echo "Стоимость окон, за ".$windows." шт.";
+	echo "Стоимость окон, за ".$windows." шт.";
 	echo '</td>';
 	echo '<td>';
 	echo $price_windows." руб.";
@@ -421,13 +421,13 @@ if ($zamok !="none") {
 
 
 echo '<tr>';
-	echo '<td>';
-		echo 'Итого';
-	echo '<t/d>';
-	echo '<td>';
-	echo $price+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok.' руб.';
-	echo '<t/d>';
-	
+echo '<td>';
+echo 'Итого';
+echo '<t/d>';
+echo '<td>';
+echo $price+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok.' руб.';
+echo '<t/d>';
+
 echo '</tr>';
 echo '</table>';
 
