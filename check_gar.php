@@ -151,6 +151,22 @@ if ($montazh != "none") {
 	}
 }
 
+
+if ($upr == "automatic") {
+	if (($csvdata [2]*$csvdata [3] <= 8400000) & ($csvdata [3]<=2700))  {
+		$price_automatic=20250;
+		$price_automatic_text="ASG600/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 600Н";
+	}
+	if (($csvdata [2]*$csvdata [3] <= 13500000) & ($csvdata [2]*$csvdata [3] > 8400000) & ($csvdata [3]<=2700)){
+		$price_automatic=28100;
+		$price_automatic_text="ASG1000/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 1000Н";
+	}
+	if (($csvdata [2]*$csvdata [3] <= 16000000) & ($csvdata [2]*$csvdata [3] > 13500000) & ($csvdata [3]>2700) & ($csvdata [3]<=3400)){
+		$price_automatic=28100;
+		$price_automatic_text="ASG1000/4KIT Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 4,2м., 24В, тяговое усилие 1000Н";
+	}
+}
+
 if ($dostavka<>"none"){
 	if ($dostavka<>"city"){
 		$price_dostavka=700+$km*30;
@@ -440,7 +456,7 @@ echo '<td>';
 echo 'Итого';
 echo '<t/d>';
 echo '<td>';
-echo $price+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok.' руб.';
+echo $price+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx.' руб.';
 echo '<t/d>';
 
 echo '</tr>';
