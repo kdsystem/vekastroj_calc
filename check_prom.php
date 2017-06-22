@@ -482,7 +482,6 @@ if ($upr == "reductor") {
 }
 
 
-if ($csx !="podves_cs2") {
 	echo '<tr>';
 	echo '<td>';
 	echo $price_csx_text;
@@ -491,7 +490,7 @@ if ($csx !="podves_cs2") {
 	echo $price_csx." руб.";
 	echo '</td>';
 	echo '</tr>';
-}
+
 
 
 echo '<tr>';

@@ -425,7 +425,6 @@ if ($zamok !="none") {
 	echo '</tr>';
 }
 
-if ($csx !="csx2") {
 	echo '<tr>';
 	echo '<td>';
 	echo $price_csx_text;
@@ -434,7 +433,6 @@ if ($csx !="csx2") {
 	echo $price_csx." руб.";
 	echo '</td>';
 	echo '</tr>';
-}
 
 
 echo '<tr>';
