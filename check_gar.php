@@ -163,16 +163,20 @@ if ($dostavka<>"none"){
 }
 
 if ($csx=="csx2"){
-	$price=$price+225;
+	$price_csx=225;
+	$price_csx_text="Телескопическое подвешение типа CS-2";
 }
 if ($csx=="csx3"){
-	$price=$price+300;
+	$price_csx=300;
+	$price_csx_text="Телескопическое подвешение типа CS-3";
 }
 if ($csx=="csx4"){
-	$price=$price+450;
+	$price_csx=450;
+	$price_csx_text="Телескопическое подвешение типа CS-4";
 }
 if ($csx=="csx5"){
-	$price=$price+824;
+	$price_csx=824;
+	$price_csx_text="Телескопическое подвешение типа CS-5";
 }
 echo '<input id="back" type="submit" value="Назад" onclick="javascript:Back()" />
 <script type="text/javascript">
@@ -420,7 +424,16 @@ if ($zamok !="none") {
 	echo '</tr>';
 }
 
-
+if ($csx !="podves_cs2") {
+	echo '<tr>';
+	echo '<td>';
+	echo $price_csx_text;
+	echo '</td>';
+	echo '<td>';
+	echo $price_csx." руб.";
+	echo '</td>';
+	echo '</tr>';
+}
 
 
 echo '<tr>';
