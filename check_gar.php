@@ -202,7 +202,6 @@ if ($maintype == "classic") {
 }
 
 $csvdata = csv_in_array( $yourcsvfile, ";", "\"", false, $width, $height);
-echo "<br>";
 
 if ($door<>"none"){
 	$multi=false;
