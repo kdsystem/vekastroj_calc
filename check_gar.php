@@ -424,7 +424,7 @@ if ($zamok !="none") {
 	echo '</tr>';
 }
 
-if ($csx !="podves_cs2") {
+if ($csx !="csx2") {
 	echo '<tr>';
 	echo '<td>';
 	echo $price_csx_text;
