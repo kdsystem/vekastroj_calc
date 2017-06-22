@@ -279,7 +279,6 @@ if ($mount_type=="low_mount"){$price_mounttype=$csvdata[4]*0.05;}
 if ($mount_type=="high_mount"){$price_mounttype=$csvdata[4]*0.08;}
 
 echo "<br>";
-echo "<br>";
 $orderNumber=uniqid();
 
 echo '<img width="60%" src="images/kp.png">';
