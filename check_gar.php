@@ -288,13 +288,13 @@ echo "<br>";
 echo '<table border="1">';
 echo '<tr>';
 echo "<th> Коммерческое предложение  №".$orderNumber." от ".date("d.m.y")."</th>";
-echo '</tr>';
-echo '<tr>';
+echo '<td>';
 echo 'Сумма';
+echo '</td>';
 echo '</tr>';
 echo '<tr>';
 echo '<td>';
-echo 'Гаражные ворота1 ';
+echo 'Гаражные ворота ';
 echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color.",";
 if ($mount_type=="std_mount") { echo '<br>';echo 'выбран стандартный тип монтажа';}
