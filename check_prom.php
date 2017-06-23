@@ -550,6 +550,9 @@ if ($debugging){
 	echo "<br>";
 	echo"poddom =".$poddom;
 	echo "<br>";
+	echo "Файл для рассчетов=";
+	echo $yourcsvfile;
+	echo "<br>";
 	
 	//echo "Ширина =" . $csvdata [2];
 	//echo "<br>";
