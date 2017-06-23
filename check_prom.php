@@ -123,7 +123,7 @@ $txt_springs="";
 $price_automatic=0;
 $price_automatic_dop=0;
 
-if ($maintype=="proplus"){
+if ($maintype=="Proplus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
 	if ($door != "none") {
 		$price_door = 32860;
@@ -265,6 +265,7 @@ echo '</tr>';
 echo '<tr>';
 echo '<td>';
 echo 'Промышленные ворота ';
+echo 'Тип '.$maintype;
 echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color;
 if ($springs==0 )
