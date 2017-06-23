@@ -123,7 +123,7 @@ $txt_springs="";
 $price_automatic=0;
 $price_automatic_dop=0;
 
-if ($maintype="proplus"){
+if ($maintype=="proplus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
 	if ($door != "none") {
 		$price_door = 32860;
