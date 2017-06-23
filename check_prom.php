@@ -1,7 +1,7 @@
 <?php
 $debugging=false;
 //ну тут всё ясно
-$discount = 0.3;
+
 $ip=$_SERVER['REMOTE_ADDR'];
 
 function csv_in_array($url, $delm = ";", $encl = "\"", $head = false, $wid, $heig) {
