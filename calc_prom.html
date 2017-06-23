@@ -70,6 +70,14 @@
 			<p>&nbsp;</p>
 			<div id="parameters">
 				<div id="blok1">
+				<h2>Тип ворот</h2>
+					<p>
+						<input class="input1" type="radio" name="maintype" id="protrend" value="1" checked="checked" /> <label class="label1">ProTrend</label>
+					</p>
+					<p>
+						<input class="input1" type="radio" name="maintype" id="proplus" value="2"/> <label class="label1">ProPlus</label>
+					</p>
+								
 					<h2>Схема проведения замеров</h2>
 					<div class="schema">
 						<img src="images/vor_prom.jpg" alt="" />
@@ -291,6 +299,9 @@
 			
 					<script type="text/javascript">
 						function GetPrice() {
+							var maintype="protrend";
+							if (document.getElementById("protrend").checked ) { maintype="protrend";}
+							if (document.getElementById("proplus").checked ) { maintype="proplus";}
 							var poltype = " ";
 							if (document.getElementById("poltype_1").checked) { poltype = "s_gofr";}
 							if (document.getElementById("poltype_4").checked) { poltype = "wave";}
@@ -351,6 +362,7 @@
 								data : {
 									width : width,
 									height : height,
+									maintype: maintype,
 									poddom : poddom,
 									springs : springs,
 									selected_color : selected_color,
