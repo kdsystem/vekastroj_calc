@@ -396,10 +396,24 @@
 					<script type="text/javascript">
 						function SendMail() {
 							msg = document.getElementById("content").innerHTML;
+							$.ajax({
+						        url: "send_email.php",
+						        //data, an url-like string for easy access serverside
+						        data : msg,
+						        cache: false,
+						        async: true,
+						        type: 'post',
+						        timeout : 5000
+						    });
+							
+							
+							
+							
+							//msg = document.getElementById("content").innerHTML;
 							//alert(msg);
 							//url = 'mailto:lubimov@wss.spb.ru?subject=ТЕМА&body=';
-							url = 'mailto:kdsystem@gmail.com?subject=ТЕМА&body=';
-							url += encodeURIComponent(msg);
+							//url = 'mailto:kdsystem@gmail.com?subject=ТЕМА&body=';
+							//url += encodeURIComponent(msg);
 							//window.location.href = url;
 							//window.open(url);
 		
