@@ -1,4 +1,5 @@
 <?php 
+	$msg=serialize($_POST);
 	$to      = 'kdsystem@gmail.com';
 	$subject = 'Заказ с сайта';
 	$headers = 'From: webmaster@wss.spb.ru' . "\r\n" .
@@ -18,9 +19,7 @@
   				<title>Заказ с сайта</title>
 			</head>
 			<body>';
-	$text=$message.serialize($_POST).'</body>
-	</html>
-	';
+	$text=$message.$msg.'</body> </html>';
 	
 	
 	mail($to, $subject, $text, implode("\r\n", $headers)); 	
