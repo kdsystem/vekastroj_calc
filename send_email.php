@@ -6,6 +6,6 @@
 			'Reply-To: lubimov@wss.spb.ru' . "\r\n" .
 			'X-Mailer: PHP/' . phpversion();
 	
-	echo ("111111111111111111");
+	
 	mail($to, $subject, "11111111", $headers); 	
 ?>
