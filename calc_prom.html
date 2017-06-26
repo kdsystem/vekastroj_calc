@@ -394,7 +394,7 @@
 					<input class="input1" id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 					<script type="text/javascript">
 						function SendMail() {
-							msg = document.getElementById("content").innerHTML;
+							msg = document.getElementById("kp").innerHTML;
 							alert ("!!!!");
 							$.ajax({
 								type : 'POST',
@@ -403,18 +403,6 @@
 						        cache: false,
 						        async: true
 						    });
-							
-							
-							
-							
-							//msg = document.getElementById("content").innerHTML;
-							//alert(msg);
-							//url = 'mailto:lubimov@wss.spb.ru?subject=ТЕМА&body=';
-							//url = 'mailto:kdsystem@gmail.com?subject=ТЕМА&body=';
-							//url += encodeURIComponent(msg);
-							//window.location.href = url;
-							//window.open(url);
-		
 						}
 					</script>
 				</div>
