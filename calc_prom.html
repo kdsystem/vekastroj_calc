@@ -394,7 +394,7 @@
 					<input class="input1" id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 					<script type="text/javascript">
 						function SendMail() {
-							msg = document.getElementById("kp").innerHTML;
+							msg = document.getElementById("res").innerHTML;
 							alert ("!!!!");
 							$.ajax({
 								type : 'POST',
