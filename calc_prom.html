@@ -391,20 +391,17 @@
 				<div id="res" class="res">
 				</div>
 				<div id="send_button">
-					<input class="input1" id="send" type="submit" value="Отправить"
-								onclick="javascript:SendMail()" /> 
+					<input class="input1" id="send" type="submit" value="Отправить" onclick="javascript:SendMail()" /> 
 					<script type="text/javascript">
 						function SendMail() {
 							msg = document.getElementById("content").innerHTML;
 							alert ("!!!!");
 							$.ajax({
-						        url: "http://kdsystem.noip.me/vekastroj_calc/send_email.php",
-						        //data, an url-like string for easy access serverside
+								type : 'POST',
+								url: "http://kdsystem.noip.me/vekastroj_calc/send_email.php",
 						        data : msg,
 						        cache: false,
-						        async: true,
-						        type: 'post',
-						        timeout : 5000
+						        async: true
 						    });
 							
 							
