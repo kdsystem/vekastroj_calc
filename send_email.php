@@ -1,6 +1,6 @@
 <?php 
 	$to      = 'kdsystem@gmail.com';
-	$subject = 'Çàêàç ñ ñàéòà';
+	$subject = 'Ð—Ð°ÐºÐ°Ð· Ñ ÑÐ°Ð¹Ñ‚Ð°';
 	$text=serialize($_POST);
 	$headers = 'From: webmaster@wss.spb.ru' . "\r\n" .
 			'Reply-To: lubimov@wss.spb.ru' . "\r\n" .
