@@ -21,7 +21,6 @@
 			</head>
 			<body>';
 	$text=$message.$msg.'</body> </html>';
-	
-	
+//Отправим письмо	
 	mail($to, $subject, $text, $headers); 	
 ?>
