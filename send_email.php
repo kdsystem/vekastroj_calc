@@ -10,8 +10,8 @@
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	
 	// Дополнительные заголовки
-	$headers[] = 'To: Alex Lubimov <lubimov@wss.spb.ru>';
-	$headers[] = 'From: Webmaster <admin@wss.spb.ru>';
+	$headers .= 'To: Alex Lubimov <lubimov@wss.spb.ru>';
+	$headers .= 'From: Webmaster <admin@wss.spb.ru>';
 
 	$message = '
 		<html>
