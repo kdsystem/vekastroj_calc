@@ -378,6 +378,10 @@ if ($door=="door_low") {
 	echo '<td>';
 	echo $price_door.' руб.';
 	echo '</td>';
+	$price_door_discount=$price_door*(1-$discount);
+	echo '<td>';
+	echo $price_door_discount.' руб.';
+	echo '</td>';
 	echo '</tr>';
 }
 
@@ -456,6 +460,10 @@ if ($windows!=0) {
 	echo '</td>';
 	echo '<td>';
 	echo $price_windows." руб.";
+	echo '</td>';
+	$price_windows_discount=$price_windows*(1-$discount);
+	echo '<td>';
+	echo $price_windows_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
