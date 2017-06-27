@@ -320,7 +320,6 @@ echo '<td>';
 $discount_percent=$discount*100;
 echo 'с учетом скидки '.$discount_percent.' %';
 echo '</td>';
-
 echo '</tr>';
 echo '<tr>';
 echo '<td>';
@@ -335,6 +334,12 @@ echo '<td>';
 //echo $csvdata[4].' руб.';
 echo $price.' руб.';
 echo '</td>';
+$price_discount=$price*(1-$discount);
+echo '<td>';
+echo $price_discount.' руб.';
+echo '</td>';
+
+
 echo '</tr>';
 echo '<tr>';
 if ($mount_type=='low_mount' ) {echo '<td>'; echo"Выбран низкий монтаж";
