@@ -363,6 +363,10 @@ if ($door=="door_std") {
 	echo '<td>';
 	echo $price_door.' руб.';
 	echo '</td>';
+	$price_door_discount=$price_door*(1-$discount);
+	echo '<td>';
+	echo $price_door_discount.' руб.';
+	echo '</td>';
 	echo '</tr>';
 }
 
