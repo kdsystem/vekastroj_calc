@@ -276,7 +276,7 @@ echo $price.' руб.';
 echo '</td>';
 $price_discount=$price*(1-$discount);
 echo '<td>';
-echo $price_discount.' руб1.';
+echo $price_discount.' руб.';
 echo '</td>';
 echo '</tr>';
 
