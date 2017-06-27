@@ -320,6 +320,7 @@ echo '</tr>';
 echo '<tr>';
 echo '<td>';
 echo 'Гаражные ворота ';
+echo 'Тип '.$maintype.', ';
 echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color.",";
 if ($mount_type=="std_mount") { echo '<br>';echo 'выбран стандартный тип монтажа';}
