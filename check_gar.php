@@ -102,7 +102,7 @@ $price_upr=0;
 $price_multi=0;
 $price_mounttype=0;
 $yourcsvfile="";
-if ($maintype == "classic") {
+if ($maintype == "Classic") {
 	if ($door != "none") {
 		$price_door = 32860;
 		// $price=$price+32860;
@@ -127,7 +127,7 @@ if ($maintype == "classic") {
 		}
 	}
 }
-if ($maintype == "trend") {
+if ($maintype == "Trend") {
 	if ($door != "none") {
 		$price_door = 26576;
 		// $price=$price+26576;
