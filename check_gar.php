@@ -316,6 +316,11 @@ echo "<th> Коммерческое предложение  №".$orderNumber." 
 echo '<td>';
 echo 'Сумма';
 echo '</td>';
+echo '<td>';
+$discount_percent=$discount*100;
+echo 'с учетом скидки '.$discount_percent.' %';
+echo '</td>';
+
 echo '</tr>';
 echo '<tr>';
 echo '<td>';
