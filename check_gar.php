@@ -385,33 +385,6 @@ if ($door=="door_low") {
 	echo '</tr>';
 }
 
-if ($upr == "automatic") {
-	echo '<tr>';
-	echo '<td>';
-	echo $price_automatic_text;
-	echo '</td>';
-	echo '<td>';
-	echo $price_automatic." руб.";
-	echo '</td>';
-	if ($door !="none"){
-		$price_automatic_dop=2850;
-		$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
-		echo '<tr>';
-		echo '<td>';
-		echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности";
-		echo "(датчика калитки и датчиков ослабления тяговых тросов)";
-		echo '</td>';
-		echo '<td>';
-		echo $price_automatic_dop." руб.";
-		echo '</td>';
-		echo '<td>';
-		echo $price_automatic_dop_dicount." руб.";
-		echo '</td>';
-	}
-	echo '</tr>';
-}
-
-
 if ($dostavka<>"none"){
 	echo '<tr>';
 	echo '<td>';
@@ -498,6 +471,32 @@ if ($zamok !="none") {
 	echo $price_csx." руб.";
 	echo '</td>';
 	echo '</tr>';
+
+if ($upr == "automatic") {
+	echo '<tr>';
+	echo '<td>';
+	echo $price_automatic_text;
+	echo '</td>';
+	echo '<td>';
+	echo $price_automatic." руб.";
+	echo '</td>';
+	if ($door !="none"){
+		$price_automatic_dop=2850;
+		$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
+		echo '<tr>';
+		echo '<td>';
+		echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности";
+		echo "(датчика калитки и датчиков ослабления тяговых тросов)";
+		echo '</td>';
+		echo '<td>';
+		echo $price_automatic_dop." руб.";
+		echo '</td>';
+		echo '<td>';
+//		echo $price_automatic_dop_dicount." руб.";
+		echo '</td>';
+	}
+	echo '</tr>';
+}
 
 
 echo '<tr>';
