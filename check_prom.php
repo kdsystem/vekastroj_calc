@@ -310,11 +310,11 @@ if ($springs !=0) {
 	echo '</tr>';
 }
 
-
+$door_txt=", комплект калитки включает: контакт калитки, усиливающий корпус замка, врезной замок, комплект ключей (2 шт.), комплект алюминиевых ручек, линейный доводчик.";
 if ($door=="door_std") {
 	echo '<tr>';
 	echo '<td>';
-	echo 'Встроенная калитка (стандартная)';
+	echo 'Встроенная калитка (стандартная)'.$door_txt;
 	echo '</td>';
 	echo '<td>';
 	echo $price_door.' руб.';
@@ -329,7 +329,7 @@ if ($door=="door_std") {
 if ($door=="door_low") {
 	echo '<tr>';
 	echo '<td>';
-	echo 'Встроенная калитка (с низким порогом)';
+	echo 'Встроенная калитка (с низким порогом)'.$door_txt;
 	echo '</td>';
 	echo '<td>';
 	echo $price_door.' руб.';
@@ -428,6 +428,19 @@ if ($zamok !="none") {
 	echo '</tr>';
 }
 
+echo '<tr>';
+echo '<td>';
+echo $price_csx_text;
+echo '</td>';
+echo '<td>';
+echo $price_csx." руб.";
+echo '</td>';
+$price_csx_discount=$price_csx*(1-$discount);
+echo '<td>';
+echo $price_csx_discount." руб.";
+echo '</td>';
+echo '</tr>';
+
 if ($upr == "automatic") {
 	echo '<tr>';
 	echo '<td>';
@@ -481,17 +494,6 @@ if ($upr == "reductor") {
 	echo '</td>';
 	echo '</tr>';
 }
-
-
-	echo '<tr>';
-	echo '<td>';
-	echo $price_csx_text;
-	echo '</td>';
-	echo '<td>';
-	echo $price_csx." руб.";
-	echo '</td>';
-	echo '</tr>';
-
 
 
 echo '<tr>';

@@ -450,6 +450,10 @@ if ($aqua !="none") {
 	echo '<td>';
 	echo $price_aqua." руб.";
 	echo '</td>';
+	$price_aqua_discount=$price_aqua*(1-$discount);
+	echo '<td>';
+	echo $price_aqua_discount." руб.";
+	echo '</td>';
 	echo '</tr>';
 }
 
@@ -461,6 +465,10 @@ if ($zamok !="none") {
 	echo '<td>';
 	echo $price_zamok." руб.";
 	echo '</td>';
+	$price_zamok_discount=$price_zamok*(1-$discount);
+	echo '<td>';
+	echo $price_zamok_discount." руб.";
+	echo '</td>';
 	echo '</tr>';
 }
 
@@ -470,6 +478,10 @@ if ($zamok !="none") {
 	echo '</td>';
 	echo '<td>';
 	echo $price_csx." руб.";
+	echo '</td>';
+	$price_csx_discount=$price_csx*(1-$discount);
+	echo '<td>';
+	echo $price_csx_discount." руб.";
 	echo '</td>';
 	echo '</tr>';
 
