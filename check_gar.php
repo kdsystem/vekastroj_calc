@@ -517,7 +517,18 @@ echo '<td>';
 echo 'Итого';
 echo '</td>';
 echo '<td>';
-echo $price+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic.' руб.';
+echo $price+
+$price_mounttype+
+$price_door+
+$price_dostavka+
+$price_upr+
+$price_door+
+$price_aqua+
+$price_zamok+
+$price_csx+
+$price_automatic+
+$price_automatic_dop.' руб.';
+
 echo '</td>';
 echo '<td>';
 echo $price_discount+
