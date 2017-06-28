@@ -510,6 +510,20 @@ echo '</tr>';
 echo '</table>';
 echo "<br>";
 
+echo $price_discount+
+$price_mtype_discount+
+$price_springs_discount+
+$price_door_discount+
+$price_dostavka+
+$price_upr+
+$price_windows_discount+
+$price_aqua_discount+
+$price_zamok_discount+
+$price_csx_discount+
+$price_automatic+
+$price_automatic_dop+
+$price_poddom_discount.' руб.';
+
 if ($debugging){
 	echo"Высота =".$height;
 	echo "<br>";
