@@ -3,7 +3,7 @@
 	//$to      = 'lubimov@wss.spb.ru';
 	$to      = 'kdsystem@gmail.com';
 	$subject = 'Заказ с сайта';
-	$headers = 'From: webmaster@wss.spb.ru' . "\r\n" .
+	$headers = 'From: admin@wss.spb.ru' . "\r\n" .
 			'Reply-To: lubimov@wss.spb.ru' . "\r\n" .
 			'X-Mailer: PHP/' . phpversion();
 
