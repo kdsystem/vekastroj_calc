@@ -520,7 +520,17 @@ echo '<td>';
 echo $price+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic.' руб.';
 echo '</td>';
 echo '<td>';
-echo $price_discount+$price_poddom_discount+$price_springs_discount+$price_mtype_discount+$price_door_discount+$price_aqua_discount+$price_zamok_discount;
+echo $price_discount+
+$price_mounttype+
+$price_door_discount+
+$price_dostavka+
+$price_upr+
+$price_door_discount+
+$price_aqua_discount+
+$price_zamok_discount+
+$price_csx_discount+
+$price_automatic+
+$price_automatic_dop.' руб.';
 echo '</td>';
 
 echo '</tr>';
