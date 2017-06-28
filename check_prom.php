@@ -504,12 +504,6 @@ echo '<td>';
 echo $price+$price_poddom+$price_springs+$price_mtype+$price_mounttype+$price_door+$price_dostavka+$price_upr+$price_windows+$price_aqua+$price_zamok+$price_csx+$price_automatic_dop+$price_automatic+$price_reductor.' руб.';
 echo '</td>';
 echo '<td>';
-echo $price_discount+$price_poddom_discount+$price_springs_discount+$price_mtype_discount+$price_door_discount+$price_aqua_discount+$price_zamok_discount;
-echo '</td>';
-echo '</tr>';
-echo '</table>';
-echo "<br>";
-
 echo $price_discount+
 $price_mtype_discount+
 $price_springs_discount+
@@ -523,6 +517,10 @@ $price_csx_discount+
 $price_automatic+
 $price_automatic_dop+
 $price_poddom_discount.' руб.';
+echo '</td>';
+echo '</tr>';
+echo '</table>';
+echo "<br>";
 
 if ($debugging){
 	echo"Высота =".$height;
