@@ -447,9 +447,9 @@ if ($upr == "automatic") {
 		echo '<td>';
 		echo $price_automatic_dop." руб.";
 		echo '</td>';
-		echo '<td>';
-		echo $price_automatic_dop_dicount." руб.";
-		echo '</td>';
+		//echo '<td>';
+		//echo $price_automatic_dop_dicount." руб.";
+		//echo '</td>';
 	}
 	echo '</tr>';
 	
