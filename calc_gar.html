@@ -496,6 +496,7 @@ h1, h2, h3, h4, h5, h6, .site-title {
 									<script type="text/javascript">
 										function SendMail() {
 											msg = document.getElementById("res").innerHTML;
+											alert("111");
 											$.ajax({
 												type : 'POST',
 												url: "http://kdsystem.noip.me/vekastroj_calc/send_email.php",
