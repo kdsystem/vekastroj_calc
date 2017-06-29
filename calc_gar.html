@@ -296,56 +296,7 @@ h1, h2, h3, h4, h5, h6, .site-title {
 											</label>
 										</p>
 									</div>
-									<div>
-										<h2>Дополнительно</h2>
-										<p class="calc-other-text">
-											<label class="label1">Количество окон</label><input class="input1" type="text" name="okna"
-												id="windows" value="0" maxlength="4" width=""/>
-										</p>
-						
-										<div id="div_aqua">
-											<input class="input1" type="checkbox" id="aqua" /><label class="label1">Комплект для влажных
-												помещений</label>
-										</div>
-										<p>
-										
-										
-										<div id="div_zamok">
-											<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label class="label1">Замок
-												ригельный</label>
-										</div>
-										</p>
-										<p>
-											<input class="input1" type="checkbox" name="kalitka" value="wicket" id="door"
-												onchange="Door(this);" /><label class="label1">Калитка</label>
-										</p>
-						
-										<div id="kalitka" style="display: none;">
-											<p>
-												<input class="input1" type="radio" name="kaltype" value="1" id="door_std"
-													checked="checked" /> <label class="label1">стандартная</label>
-											</p>
-											<p>
-												<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label class="label1">с
-													низким порогом</label>
-											</p>
-										</div>
-						
-										<script>
-									function Door(door)
-									{
-										if (document.getElementById("door").checked ) { 
-											document.getElementById("kalitka").style = "display: inline-block;";
-											document.getElementById("div_zamok").style="display: none;";
-										}
-										else {
-											document.getElementById("kalitka").style = "display: none;"
-											document.getElementById("div_zamok").style= "display: inline-block;";
-										}
-									}
-								</script>
-						
-									</div>
+									
 									<br> Ширина <br> <input class="input1" type="text" size="10" name="width" id="width">
 									<br> 
 									<br> Высота <br> <input class="input1" type="text" size="10" name="height" id="height"> 
@@ -479,6 +430,57 @@ h1, h2, h3, h4, h5, h6, .site-title {
 										}
 									}	
 								</script>
+								<div>
+										<h2>Дополнительно</h2>
+										<p class="calc-other-text">
+											<label class="label1">Количество окон</label><input class="input1" type="text" name="okna"
+												id="windows" value="0" maxlength="4" width=""/>
+										</p>
+						
+										<div id="div_aqua">
+											<input class="input1" type="checkbox" id="aqua" /><label class="label1">Комплект для влажных
+												помещений</label>
+										</div>
+										<p>
+										
+										
+										<div id="div_zamok">
+											<input class="input1" type="checkbox" name="rigel" value="bolt" id="zamok" /><label class="label1">Замок
+												ригельный</label>
+										</div>
+										</p>
+										<p>
+											<input class="input1" type="checkbox" name="kalitka" value="wicket" id="door"
+												onchange="Door(this);" /><label class="label1">Калитка</label>
+										</p>
+						
+										<div id="kalitka" style="display: none;">
+											<p>
+												<input class="input1" type="radio" name="kaltype" value="1" id="door_std"
+													checked="checked" /> <label class="label1">стандартная</label>
+											</p>
+											<p>
+												<input class="input1" type="radio" name="kaltype" value="2" id="door_low" /> <label class="label1">с
+													низким порогом</label>
+											</p>
+										</div>
+						
+										<script>
+									function Door(door)
+									{
+										if (document.getElementById("door").checked ) { 
+											document.getElementById("kalitka").style = "display: inline-block;";
+											document.getElementById("div_zamok").style="display: none;";
+										}
+										else {
+											document.getElementById("kalitka").style = "display: none;"
+											document.getElementById("div_zamok").style= "display: inline-block;";
+										}
+									}
+								</script>
+						
+									</div>
+								
 								</div>
 							</div>
 							<div id="kp" style="display: none;">
