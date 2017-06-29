@@ -550,7 +550,13 @@ echo '</table>';
 echo "<br>";
 echo "<br>";
 echo "Благодарим Вас, за использование калькулятора расчета стоимости Ваших ворот на сайте нашей компании!";
-
+echo "<br>";
+echo '								<div id="personalinfo">
+									<br> Как вас зовут? <br> <input class="input_personalinfo" type="text" width="100" size="20" name="FIO" id="FIO">
+									<br> Ваш телефон <br> <input class="input_personalinfo" type="text" width="50" size="11" name="phone" id="phone">
+									<br> Примечания <br> <textarea>(адрес объекта)</textarea>
+								</div>
+';
 if ($debugging){
 	echo "<br>";
 	echo "Файл для расчетов =".$yourcsvfile;
