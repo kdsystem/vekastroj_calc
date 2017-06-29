@@ -20,5 +20,5 @@
 	$text=$message.$msg.'</body> </html>';
 	
 	
-	mail($to, $subject, $text, implode("\r\n", $headers));
+	mail($to, $subject, $text, $headers);
 ?>
