@@ -102,6 +102,9 @@ $price_upr=0;
 $price_multi=0;
 $price_mounttype=0;
 $yourcsvfile="";
+$price_mounttype_discount=0;
+$price_automatic=0;
+$price_automatic_text='';
 if ($maintype == "Classic") {
 	if ($door != "none") {
 		$price_door = 32860;
@@ -151,21 +154,6 @@ if ($montazh != "none") {
 	}
 }
 
-
-if ($upr == "automatic") {
-	if (($csvdata [2]*$csvdata [3] <= 8400000) & ($csvdata [3]<=2700))  {
-		$price_automatic=7350;
-		$price_automatic_text="ASG600/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 600Н";
-	}
-	if (($csvdata [2]*$csvdata [3] <= 13500000) & ($csvdata [2]*$csvdata [3] > 8400000) & ($csvdata [3]<=2700)){
-		$price_automatic=8200;
-		$price_automatic_text="ASG1000/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 1000Н";
-	}
-	if (($csvdata [2]*$csvdata [3] <= 16000000) & ($csvdata [2]*$csvdata [3] > 13500000) & ($csvdata [3]>2700) & ($csvdata [3]<=3400)){
-		$price_automatic=9450;
-		$price_automatic_text="ASG1000/4KIT Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 4,2м., 24В, тяговое усилие 1000Н";
-	}
-}
 
 if ($dostavka<>"none"){
 	if ($dostavka<>"city"){
@@ -325,9 +313,9 @@ echo '<tr>';
 echo '<td>';
 echo 'Гаражные ворота ';
 echo 'Тип '.$maintype.', ';
-echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
-echo 'цвет ='.$selected_color.",";
-if ($mount_type=="std_mount") { echo '<br>';echo 'выбран стандартный тип монтажа';}
+echo "ширина = " . $width ."мм., высота = " . $height ."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
+echo 'цвет ='.$selected_color;
+if ($mount_type=="std_mount") { echo ', выбран стандартный тип монтажа';
 echo ' )';
 echo '</td>';
 echo '<td>';
@@ -337,7 +325,7 @@ echo '</td>';
 $price_discount=$price*(1-$discount);
 echo '<td>';
 echo $price_discount.' руб.';
-echo '</td>';
+echo '</td>';}
 
 
 echo '</tr>';
@@ -346,20 +334,29 @@ if ($mount_type=='low_mount' ) {echo '<td>'; echo"Выбран низкий мо
 echo '</td>';
 echo '<td>';
 echo $price_mounttype;
-echo '</td>';}
+echo '</td>';
+$price_mounttype_discount=$price_mounttype*(1-$discount);
+echo '<td>';
+echo $price_mounttype_discount.' руб.';
+echo '</td>';
+}
 if ($mount_type=='high_mount' ) {echo '<td>'; echo"Выбран высокий монтаж";
 echo '</td>';
 echo '<td>';
 echo $price_mounttype;
 echo '</td>';
+$price_mounttype_discount=$price_mounttype*(1-$discount);
+echo '<td>';
+echo $price_mounttype_discount.' руб.';
+echo '</td>';
 }
 echo '</tr>';
 
 $door_txt=", комплект калитки включает: контакт калитки, усиливающий корпус замка, врезной замок, комплект ключей (2 шт.), комплект алюминиевых ручек, линейный доводчик.";
-if ($door=="door_std") {
+if ($door=="yes") {
 	echo '<tr>';
 	echo '<td>';
-	echo 'Встроенная калитка (стандартная)'.$door_txt;
+	echo 'Встроенная калитка'.$door_txt;
 	echo '</td>';
 	echo '<td>';
 	echo $price_door.' руб.';
@@ -369,62 +366,6 @@ if ($door=="door_std") {
 	echo $price_door_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
-}
-
-if ($door=="door_low") {
-	echo '<tr>';
-	echo '<td>';
-	echo 'Встроенная калитка (с низким порогом)'.$door_txt;
-	echo '</td>';
-	echo '<td>';
-	echo $price_door.' руб.';
-	echo '</td>';
-	$price_door_discount=$price_door*(1-$discount);
-	echo '<td>';
-	echo $price_door_discount.' руб.';
-	echo '</td>';
-	echo '</tr>';
-}
-
-if ($dostavka<>"none"){
-	echo '<tr>';
-	echo '<td>';
-	if ($dostavka<>"city"){
-		$price_dostavka=700+$km*30;
-		echo "Стоимость доставки за ".$km." км. от города ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_dostavka.' руб.';
-	}
-	else {
-		echo "Стоимость доставки в черте города ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_dostavka.' руб.';
-	}
-	echo '</td>';
-	echo '</tr>';
-}
-
-if ($montazh<>"none") {
-	echo '<tr>';
-	echo '<td>';
-	if ($upr=="manual") {
-		echo "Стоимость монтажа ворот с ручным управлением ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_upr.' руб.';
-	}
-	else{
-		echo "Стоимость монтажа ворот с электроприводом ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_upr.' руб.';
-		echo "<br>";
-	}
-	echo '</td>';
-	echo '</tr>';
-	
 }
 
 if ($windows!=0) {
@@ -472,22 +413,37 @@ if ($zamok !="none") {
 	echo '</tr>';
 }
 
-	echo '<tr>';
-	echo '<td>';
-	echo $price_csx_text;
-	echo '</td>';
-	echo '<td>';
-	echo $price_csx." руб.";
-	echo '</td>';
-	$price_csx_discount=$price_csx*(1-$discount);
-	echo '<td>';
-	echo $price_csx_discount." руб.";
-	echo '</td>';
-	echo '</tr>';
+echo '<tr>';
+echo '<td>';
+echo $price_csx_text;
+echo '</td>';
+echo '<td>';
+echo $price_csx." руб.";
+echo '</td>';
+$price_csx_discount=$price_csx*(1-$discount);
+echo '<td>';
+echo $price_csx_discount." руб.";
+echo '</td>';
+echo '</tr>';
 
-if ($upr == "automatic") {
+if ($upr <> "manual") {
+	$square = $csvdata [2]*$csvdata [3];
+	if (($square <= 8400000) and ($csvdata [3]<=2700))  {
+		$price_automatic=7350;
+		//$price_automatic_text='AAAAA';
+		$price_automatic_text='ASG600/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 600Н';
+	}
+	if (($square <= 13500000) and ($square > 8400000) and ($csvdata [3] <= 2700)){
+		$price_automatic=8200;
+		$price_automatic_text='ASG1000/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 1000Н';
+	}
+	if ((($square <= 16000000) and ($square > 13500000)) or (($csvdata [3]>2700) and ($csvdata [3]<=3400))){
+		$price_automatic=9450;
+		$price_automatic_text='ASG1000/4KIT Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 4,2м., 24В, тяговое усилие 1000Н';
+	}
 	echo '<tr>';
 	echo '<td>';
+	echo $csvdata [3];
 	echo $price_automatic_text;
 	echo '</td>';
 	echo '<td>';
@@ -505,12 +461,53 @@ if ($upr == "automatic") {
 		echo $price_automatic_dop." руб.";
 		echo '</td>';
 		echo '<td>';
-//		echo $price_automatic_dop_dicount." руб.";
+		//		echo $price_automatic_dop_dicount." руб.";
 		echo '</td>';
 	}
 	echo '</tr>';
 }
 
+
+if ($dostavka<>"none"){
+	echo '<tr>';
+	echo '<td>';
+	if ($dostavka<>"city"){
+		$price_dostavka=700+$km*30;
+		echo "Стоимость доставки за ".$km." км. от города ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_dostavka.' руб.';
+	}
+	else {
+		echo "Стоимость доставки в черте города ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_dostavka.' руб.';
+	}
+	echo '</td>';
+	echo '</tr>';
+}
+
+if ($montazh<>"none") {
+	echo '<tr>';
+	echo '<td>';
+	if ($upr=="manual") {
+		echo "Стоимость монтажа ворот с ручным управлением ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_upr.' руб.';
+	}
+	else{
+		echo "Стоимость монтажа ворот с электроприводом ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_upr.' руб.';
+		echo "<br>";
+	}
+	echo '</td>';
+	echo '</tr>';
+	
+}
 
 echo '<tr>';
 echo '<td>';
@@ -551,16 +548,11 @@ echo "<br>";
 echo "<br>";
 echo "Благодарим Вас, за использование калькулятора расчета стоимости Ваших ворот на сайте нашей компании!";
 echo "<br>";
-echo '								<div id="personalinfo">
-									<br> Как вас зовут? <br> <input class="input_personalinfo" type="text" width="100" size="20" name="FIO" id="FIO">
-									<br> Ваш телефон <br> <input class="input_personalinfo" type="text" width="50" size="11" name="phone" id="phone">
-									<br> Примечания <br> <textarea>(адрес объекта)</textarea>
-								</div>
-';
+
 if ($debugging){
 	echo "<br>";
 	echo "Файл для расчетов =".$yourcsvfile;
-	echo "<br>";	
+	echo "<br>";
 	echo"Высота =".$height;
 	echo "<br>";
 	echo"Ширина =".$width;
@@ -604,9 +596,11 @@ if ($debugging){
 	echo"poddom =".$poddom;
 	echo "<br>";
 	
-	//echo "Ширина =" . $csvdata [2];
-	//echo "<br>";
-	//echo "Высота =" . $csvdata [3];
+	echo "Ширина 2=" . $csvdata [2];
+	echo "<br>";
+	echo "Высота 2=" . $csvdata [3];
+	echo "<br>";
+	echo "Площадь =".$csvdata [2]*$csvdata [3];
 	echo "<br>";
 	echo 'IP='; echo $ip;
 }

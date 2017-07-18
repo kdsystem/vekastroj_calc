@@ -89,6 +89,7 @@ $selected_color = $_REQUEST['selected_color'];
 $poltype = $_REQUEST['poltype'];
 $montazh = $_REQUEST['montazh'];
 $dostavka = $_REQUEST['dostavka'];
+$km = $_REQUEST['km'];
 $upr = $_REQUEST['upr'];
 $mtype = $_REQUEST['mtype'];
 $zamok = $_REQUEST['zamok'];
@@ -124,7 +125,7 @@ $txt_springs="";
 $price_automatic=0;
 $price_automatic_dop=0;
 
-if ($maintype=="Proplus"){
+if ($maintype=="ProPlus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
 	if ($door != "none") {
 		$price_door = 32860;
@@ -142,10 +143,10 @@ $csvdata = csv_in_array( $yourcsvfile, ";", "\"", false, $width, $height);
 
 if ($montazh != "none") {
 	if ($upr == "manual") {
-		$price_upr = 6000;
+		if ($csvdata [2]*$csvdata [3] <= 16000000) { $price_upr = 8000;} else $price_upr = 10000;
 		// $price=$price+6000;
 	} else {
-		$price_upr = 7500;
+		if ($csvdata [2]*$csvdata [3] <= 16000000) { $price_upr = 10000;} else $price_upr = 12000;
 		// $price=$price+7500;
 	}
 }
@@ -211,7 +212,6 @@ if ($aqua != "none") {
 //if ($multi) {$price_multi=$csvdata[4]*1.05;}
 if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.05;}
 else {$price=$csvdata[4];}
-
 if ($mtype=="mtype_1") {$price_mtype=0;
 $mtype_text="стандартный монтаж";};
 if ($mtype=="mtype_2") {$price_mtype=$csvdata[4]*0.06;
@@ -266,7 +266,8 @@ echo '<tr>';
 echo '<td>';
 echo 'Промышленные ворота ';
 echo 'Тип '.$maintype.', ';
-echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
+//echo "ширина = " . $csvdata [2]."мм., высота = " . $csvdata [3]."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
+echo "ширина = " . $width."мм., высота = " . $height."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color;
 if ($springs==0 )
 {echo ', '.$txt_springs;}
@@ -311,10 +312,10 @@ if ($springs !=0) {
 }
 
 $door_txt=", комплект калитки включает: контакт калитки, усиливающий корпус замка, врезной замок, комплект ключей (2 шт.), комплект алюминиевых ручек, линейный доводчик.";
-if ($door=="door_std") {
+if ($door=="yes") {
 	echo '<tr>';
 	echo '<td>';
-	echo 'Встроенная калитка (стандартная)'.$door_txt;
+	echo 'Встроенная калитка'.$door_txt;
 	echo '</td>';
 	echo '<td>';
 	echo $price_door.' руб.';
@@ -324,62 +325,6 @@ if ($door=="door_std") {
 	echo $price_door_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
-}
-
-if ($door=="door_low") {
-	echo '<tr>';
-	echo '<td>';
-	echo 'Встроенная калитка (с низким порогом)'.$door_txt;
-	echo '</td>';
-	echo '<td>';
-	echo $price_door.' руб.';
-	echo '</td>';
-	$price_door_discount=$price_door*(1-$discount);
-	echo '<td>';
-	echo $price_door_discount.' руб.';
-	echo '</td>';
-	echo '</tr>';
-}
-
-if ($dostavka<>"none"){
-	echo '<tr>';
-	echo '<td>';
-	if ($dostavka<>"city"){
-		$price_dostavka=700+$km*30;
-		echo "Стоимость доставки за ".$km." км. от города ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_dostavka.' руб.';
-	}
-	else {
-		echo "Стоимость доставки в черте города ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_dostavka.' руб.';
-	}
-	echo '</td>';
-	echo '</tr>';
-}
-
-if ($montazh<>"none") {
-	echo '<tr>';
-	echo '<td>';
-	if ($upr=="manual") {
-		echo "Стоимость монтажа ворот с ручным управлением ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_upr.' руб.';
-	}
-	else{
-		echo "Стоимость монтажа ворот с электроприводом ";
-		echo '</td>';
-		echo '<td>';
-		echo $price_upr.' руб.';
-		echo "<br>";
-	}
-	echo '</td>';
-	echo '</tr>';
-	
 }
 
 if ($windows!=0) {
@@ -495,6 +440,46 @@ if ($upr == "reductor") {
 	echo '</tr>';
 }
 
+if ($dostavka<>"none"){
+	echo '<tr>';
+	echo '<td>';
+	if ($dostavka<>"city"){
+		$price_dostavka=700+$km*30;
+		echo "Стоимость доставки за ".$km." км. от города ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_dostavka.' руб.';
+	}
+	else {
+		echo "Стоимость доставки в черте города ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_dostavka.' руб.';
+	}
+	echo '</td>';
+	echo '</tr>';
+}
+
+if ($montazh<>"none") {
+	echo '<tr>';
+	echo '<td>';
+	if ($upr=="manual") {
+		echo "Стоимость монтажа ворот с ручным управлением ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_upr.' руб.';
+	}
+	else{
+		echo "Стоимость монтажа ворот с электроприводом ";
+		echo '</td>';
+		echo '<td>';
+		echo $price_upr.' руб.';
+		echo "<br>";
+	}
+	echo '</td>';
+	echo '</tr>';
+	
+}
 
 echo '<tr>';
 echo '<td>';
@@ -523,12 +508,7 @@ echo '</table>';
 echo "<br>";
 echo "Благодарим Вас, за использование калькулятора расчета стоимости Ваших ворот на сайте нашей компании!";
 echo "<br>";
-echo '								<div id="personalinfo">
-									<br> Как вас зовут? <br> <input class="input_personalinfo" type="text" width="100" size="20" name="FIO" id="FIO">
-									<br> Ваш телефон <br> <input class="input_personalinfo" type="text" width="50" size="11" name="phone" id="phone">
-									<br> Примечания <br> <textarea>(адрес объекта)</textarea>
-								</div>
-';
+
 if ($debugging){
 	echo"Высота =".$height;
 	echo "<br>";
