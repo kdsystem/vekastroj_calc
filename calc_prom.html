@@ -69,7 +69,8 @@
 								<li class="item-141"><a href="http://wss.spb.ru/custom_php/calc_prom.html" >Калькулятор промышленных ворот</a></li>
 							</ul>
 						</li>
-						<li class="item-138"><a href="/index.php/kontakty21" >Контакты</a></li>
+						<li class="item-138"><a href="/index.php/kontakty" >Контакты</a></li>
+						<li class="item-142"><a href="/index.php/produktsiya/blagodarnosti" >Благодарности</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -112,11 +113,18 @@
 							<script>
 								function Door(door) {
 									if (document.getElementById("door").checked) {
-										document.getElementById("kalitka").style = "display: inline-block;";
+										//document.getElementById("kalitka").style = "display: inline-block;";
+										document.getElementById("zamok").checked = false;
 										document.getElementById("div_zamok").style = "display: none;";
+										if (document.getElementById("automatic").checked) {
+											//alert("11");
+											document.getElementById("div_upr_dop").style = "display: inline-block;"
+										}
 									} else {
-										document.getElementById("kalitka").style = "display: none;"
+										//alert("22");
+										//document.getElementById("kalitka").style = "display: none;"
 										document.getElementById("div_zamok").style = "display: inline-block;";
+										document.getElementById("div_upr_dop").style = "display: none;"
 									}
 								}
 							</script>
@@ -171,20 +179,31 @@
 							</p>
 							<!--<p>
 								<input class="input1" type="radio" name="automtype" id="marantec" value="Marantec" /><label class="label1">Marantec</label>
-							--></p>
+							</p>
+							-->
+						</div>
+						<br>
+						<div id="div_upr_dop" style="display: none;">
+							<input class="input1" type="checkbox" name="upr_dop" id="upr_dop"/><label class="label1">Датчик контакта калитки</label> <br>
 						</div>
 						<script>
 							function Automatic(automatic) {
 								if (document.getElementById("automatic").checked) {
 									document.getElementById("div_automatic").style = "display: inline-block;"
 									document.getElementById("reductor").style = "display: inline-block;"
+									if (document.getElementById("door").checked) {
+										document.getElementById("div_upr_dop").style = "display: inline-block;"
+									}
+								}
+								else{								
+									document.getElementById("div_upr_dop").style = "display: none;"
 								}
 								if (document.getElementById("manual").checked) {
 									document.getElementById("div_automatic").style = "display: none;"
 								}
 								if (document.getElementById("reductor").checked) {
 									document.getElementById("div_automatic").style = "display: none;"
-								}
+								}									
 							}
 						</script>
 					</div>
@@ -250,7 +269,8 @@
 					<h2>Тип подвеса</h2>
 					<p>
 						<select size="1" style="width:280px" id="podves_csx">
-							<option selected value="podves_cs2">Телескопическое подвешение типа CS-2</option>
+							<option selected value="podves_cs1">Телескопическое подвешение типа CS-1</option>
+							<option value="podves_cs2">Телескопическое подвешение типа CS-2</option>
 						    <option value="podves_cs3">Телескопическое подвешение типа CS-3</option>
 						    <option value="podves_cs4">Телескопическое подвешение типа CS-4</option>
 						    <option value="podves_cs5">Телескопическое подвешение типа CS-5</option>
@@ -346,6 +366,9 @@
 							if (document.getElementById("windows_2").checked) {windows = 2};
 							if (document.getElementById("windows_3").checked) {windows = 3};
 							if (document.getElementById("windows_4").checked) {windows = 4};
+							var upr_dop = 0;
+							if (document.getElementById("upr_dop").checked) {upr_dop = 1};
+							//alert(upr_dop);
 							var width = document.getElementById("width").value;
 							var height = document.getElementById("height").value;
 							//var selected_color = "white";
@@ -372,7 +395,8 @@
 									windows : windows,
 									kalitka : kalitka,
 									csx : csx,
-									aqua : aqua
+									aqua : aqua,
+									upr_dop: upr_dop
 								},
 								cache : false,
 								success : function(data) {

@@ -84,6 +84,7 @@ $montazh = $_REQUEST['montazh'];
 $dostavka = $_REQUEST['dostavka'];
 $km = $_REQUEST['km'];
 $upr = $_REQUEST['upr'];
+$upr_dop=$_REQUEST['upr_dop'];
 $mount_type = $_REQUEST['mount_type'];
 //$antikor = $_REQUEST['antikor'];
 $zamok = $_REQUEST['zamok'];
@@ -107,40 +108,40 @@ $price_automatic=0;
 $price_automatic_text='';
 if ($maintype == "Classic") {
 	if ($door != "none") {
-		$price_door = 32860;
+		$price_door = 37973;
 		// $price=$price+32860;
 	}
 	if ($zamok != "none") {
-		$price_zamok = 3755;
+		$price_zamok = 4340;
 		// $price=$price+3755;
 	}
 	if ($windows != 0) {
-		$price_windows = $windows * 4147;
+		$price_windows = $windows * 4793;
 		// $price=$price+$windows*4147;
 	}
 	if ($aqua != "none") {
 		if ($height < 3000) {
-			$price_aqua = 14318;
+			$price_aqua = 16546;
 			//echo "!!!!!".$height."!!!!!";
 			// $price=$price+14318;
 		} else {
 			//echo "!!!!!".$height."!!!!!";
-			$price_aqua = 20499;
+			$price_aqua = 23689;
 			// $price=$price+20499;
 		}
 	}
 }
 if ($maintype == "Trend") {
 	if ($door != "none") {
-		$price_door = 26576;
+		$price_door = 30711;
 		// $price=$price+26576;
 	}
 	if ($zamok != "none") {
-		$price_zamok = 3596;
+		$price_zamok = 4155;
 		// $price=$price+3596;
 	}
 	if ($windows != 0) {
-		$price_windows = 3971;
+		$price_windows = 4589;
 		// $price=$price+$windows*3971;
 	}
 }
@@ -157,7 +158,7 @@ if ($montazh != "none") {
 
 if ($dostavka<>"none"){
 	if ($dostavka<>"city"){
-		$price_dostavka=700+$km*30;
+		$price_dostavka=1000+$km*30;
 		//$price=$price+700+$km*30;
 	}
 	else {
@@ -166,20 +167,24 @@ if ($dostavka<>"none"){
 	}
 }
 
+if ($csx=="podves_cs1"){
+	$price_csx=0;
+	$price_csx_text="Телескопическое подвешение типа CS-1";
+}
 if ($csx=="podves_cs2"){
-	$price_csx=225;
+	$price_csx=260;
 	$price_csx_text="Телескопическое подвешение типа CS-2";
 }
 if ($csx=="podves_cs3"){
-	$price_csx=300;
+	$price_csx=347;
 	$price_csx_text="Телескопическое подвешение типа CS-3";
 }
 if ($csx=="podves_cs4"){
-	$price_csx=450;
+	$price_csx=520;
 	$price_csx_text="Телескопическое подвешение типа CS-4";
 }
 if ($csx=="podves_cs5"){
-	$price_csx=824;
+	$price_csx=952;
 	$price_csx_text="Телескопическое подвешение типа CS-5";
 }
 
@@ -191,9 +196,9 @@ function Back(){
 }
 </script>';
 
-if ($maintype == "classic") {
+if ($maintype == "Classic") {
 	//if ($poltype == "s_gofr") {
-	if (($selected_color == "golddub") or ($selected_color == "darkdub") or ($selected_color == "vishnya")) {
+	if (($selected_color == "золотой дуб") or ($selected_color == "темный дуб") or ($selected_color == "вишня")) {
 		// только эти три цвета
 		$yourcsvfile = "vor_gar_classic_gd_dd_v.csv";
 	} else {
@@ -204,7 +209,7 @@ if ($maintype == "classic") {
 } else {
 	//echo("111111111111");
 	//if ($poltype == "s_gofr") {
-	if (($selected_color == "golddub") or ($selected_color == "darkdub") or ($selected_color == "vishnya")) {
+	if (($selected_color == "золотой дуб") or ($selected_color == "темный дуб") or ($selected_color == "вишня")) {
 		// только эти три цвета
 		$yourcsvfile = "vor_gar_trend_gd_dd_v.csv";
 	} else {
@@ -221,7 +226,7 @@ if ($door<>"none"){
 	//$price=0;
 	$wid=$csvdata[2];
 	$heig=$csvdata[3];
-	if ($type=="classic"){
+	if ($type=="Classic"){
 		//CLASSIC TYPE
 		if (($heig>=1960) and ($heig<2085)){
 			if (($wid>1875) and ($wid<3625)){$multi=true;}
@@ -286,10 +291,19 @@ if ($door<>"none"){
 	}
 }
 //if ($multi) {$price_multi=$csvdata[4]*1.05;}
-if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.05;}
-else {$price=$csvdata[4];}
-if ($mount_type=="low_mount"){$price_mounttype=$csvdata[4]*0.05;}
-if ($mount_type=="high_mount"){$price_mounttype=$csvdata[4]*0.08;}
+
+if ($maintype=="Classic"){
+	if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.05;}
+	else {$price=$csvdata[4];}
+}
+
+if ($maintype=="Trend"){
+	if (($door<>"none") and ($multi)) {$price=$csvdata[4]*1.08;}
+	else {$price=$csvdata[4];}
+}
+
+if ($mount_type=="low_mount") {$price_mounttype=$csvdata[4]*0.05;}
+if ($mount_type=="high_mount") {$price_mounttype=$csvdata[4]*0.08;}
 
 echo "<br>";
 $orderNumber=uniqid();
@@ -315,7 +329,7 @@ echo 'Гаражные ворота ';
 echo 'Тип '.$maintype.', ';
 echo "ширина = " . $width ."мм., высота = " . $height ."мм.".'(профиль '.$maintype.', полотно '.$poltype.', ';
 echo 'цвет ='.$selected_color;
-if ($mount_type=="std_mount") { echo ', выбран стандартный тип монтажа';
+if ($mount_type=="std_mount") { echo ', выбран стандартный тип монтажа';}
 echo ' )';
 echo '</td>';
 echo '<td>';
@@ -325,7 +339,7 @@ echo '</td>';
 $price_discount=$price*(1-$discount);
 echo '<td>';
 echo $price_discount.' руб.';
-echo '</td>';}
+echo '</td>';
 
 
 echo '</tr>';
@@ -427,18 +441,18 @@ echo '</td>';
 echo '</tr>';
 
 if ($upr <> "manual") {
-	$square = $csvdata [2]*$csvdata [3];
-	if (($square <= 8400000) and ($csvdata [3]<=2700))  {
-		$price_automatic=7350;
+	$square = $width*$height;
+	if (($square <= 8400000) and ($height<=2700))  {
+		$price_automatic=8175;
 		//$price_automatic_text='AAAAA';
 		$price_automatic_text='ASG600/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 600Н';
 	}
-	if (($square <= 13500000) and ($square > 8400000) and ($csvdata [3] <= 2700)){
-		$price_automatic=8200;
+	if (($square <= 13500000) and ($square > 8400000) and ($height<= 2700)){
+		$price_automatic=7900;
 		$price_automatic_text='ASG1000/3KIT-L Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 3,5м., 24В, тяговое усилие 1000Н';
 	}
-	if ((($square <= 16000000) and ($square > 13500000)) or (($csvdata [3]>2700) and ($csvdata [3]<=3400))){
-		$price_automatic=9450;
+	if ((($square <= 16000000) and ($square > 13500000)) or (($height>2700) and ($height<=3400))){
+		$price_automatic=10355;
 		$price_automatic_text='ASG1000/4KIT Электропривод со встроенным блоком управления, встроенный радиоприемник, два четырехканальных пульта, рейка с цепью 4,2м., 24В, тяговое усилие 1000Н';
 	}
 	echo '<tr>';
@@ -450,19 +464,20 @@ if ($upr <> "manual") {
 	echo $price_automatic." руб.";
 	echo '</td>';
 	if ($door !="none"){
-		$price_automatic_dop=2850;
-		$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
-		echo '<tr>';
-		echo '<td>';
-		echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности";
-		echo "(датчика калитки и датчиков ослабления тяговых тросов)";
-		echo '</td>';
-		echo '<td>';
-		echo $price_automatic_dop." руб.";
-		echo '</td>';
-		echo '<td>';
-		//		echo $price_automatic_dop_dicount." руб.";
-		echo '</td>';
+		if ($upr_dop !="0"){
+			$price_automatic_dop=3100;
+			$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
+			echo '<tr>';
+			echo '<td>';
+			echo "Коммутационный набор для подключения к системам управления электроприводами датчиков безопасности";
+			echo "(датчика калитки и датчиков ослабления тяговых тросов)";
+			echo '</td>';
+			echo '<td>';
+			echo $price_automatic_dop." руб.";
+			echo '</td>';
+			echo '<td>';
+			echo '</td>';
+		}
 	}
 	echo '</tr>';
 }
@@ -472,7 +487,7 @@ if ($dostavka<>"none"){
 	echo '<tr>';
 	echo '<td>';
 	if ($dostavka<>"city"){
-		$price_dostavka=700+$km*30;
+		$price_dostavka=1000+$km*30;
 		echo "Стоимость доставки за ".$km." км. от города ";
 		echo '</td>';
 		echo '<td>';
@@ -519,7 +534,6 @@ $price_mounttype+
 $price_door+
 $price_dostavka+
 $price_upr+
-$price_door+
 $price_aqua+
 $price_zamok+
 $price_csx+
@@ -533,7 +547,6 @@ $price_mounttype+
 $price_door_discount+
 $price_dostavka+
 $price_upr+
-$price_door_discount+
 $price_aqua_discount+
 $price_zamok_discount+
 $price_csx_discount+
@@ -553,6 +566,11 @@ if ($debugging){
 	echo "<br>";
 	echo "Файл для расчетов =".$yourcsvfile;
 	echo "<br>";
+	echo "Базовая цена =".$csvdata [4];
+	echo "<br>";
+	if ($multi) {echo "multi= TRUE";}
+	else {echo "multi= FALSE";}
+	echo "<br>";	
 	echo"Высота =".$height;
 	echo "<br>";
 	echo"Ширина =".$width;
@@ -571,7 +589,7 @@ if ($debugging){
 	echo "<br>";
 	echo"Управление =".$upr;
 	echo "<br>";
-	echo"Тип установки =".$mtype;
+	echo"Тип установки =".$mount_type;
 	echo "<br>";
 	//echo"Антикор =".$antikor;
 	//echo "<br>";

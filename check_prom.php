@@ -1,6 +1,6 @@
 <?php
 $debugging=false;
-$discount=0.3;
+$discount=0.34;
 //ну тут всё ясно
 
 $ip=$_SERVER['REMOTE_ADDR'];
@@ -100,6 +100,7 @@ $csx=$_REQUEST['csx'];
 $aqua=$_REQUEST['aqua'];
 $springs=$_REQUEST['springs'];
 $poddom=$_REQUEST['poddom'];
+$upr_dop=$_REQUEST['upr_dop'];
 $price=0;
 $price_poddom=0;
 $price_discount=0;
@@ -128,14 +129,20 @@ $price_automatic_dop=0;
 if ($maintype=="ProPlus"){
 	$yourcsvfile = "vor_prom_proplus.csv";
 	if ($door != "none") {
-		$price_door = 32860;
+		$price_door = 37973;
+	}
+	if ($windows !=0){
+		$price_windows=$windows*4793;
 	}
 }
 else{
 	//protrend
 	$yourcsvfile = "vor_prom_protrend.csv";
 	if ($door != "none") {
-		$price_door = 26576;
+		$price_door = 30711;
+	}
+	if ($windows !=0){
+		$price_windows=$windows*4589;
 	}
 }
 
@@ -143,7 +150,7 @@ $csvdata = csv_in_array( $yourcsvfile, ";", "\"", false, $width, $height);
 
 if ($montazh != "none") {
 	if ($upr == "manual") {
-		if ($csvdata [2]*$csvdata [3] <= 16000000) { $price_upr = 8000;} else $price_upr = 10000;
+	    if ($csvdata [2]*$csvdata [3] <= 16000000) { $price_upr = 8000;} else $price_upr = 10000;
 		// $price=$price+6000;
 	} else {
 		if ($csvdata [2]*$csvdata [3] <= 16000000) { $price_upr = 10000;} else $price_upr = 12000;
@@ -154,19 +161,19 @@ if ($montazh != "none") {
 //echo "!!!!!!!!!!!!!!!".$csvdata [2]*$csvdata [3];
 if ($upr == "automatic") {
 	if ($csvdata [2]*$csvdata [3] <= 18000000)  {
-		$price_automatic=20250;
+		$price_automatic=22785;
 		$price_automatic_text="ASI50KIT Электропривод с цепью ручного управления и набором кабелей, внешний блок управления CUID-230, монтажный комплект.";
 	}
 	if (($csvdata [2]*$csvdata [3] <= 30000000) & ($csvdata [2]*$csvdata [3] > 18000000)){
-		$price_automatic=28100;
+		$price_automatic=31500;
 		$price_automatic_text="ASI100KIT Электропривод с цепью ручного управления и набором кабелей, внешний блок управления CUID-230, монтажный комплект.";
 	}
-	if ($poddom !="none") {$price_poddom=1274;};
+	if ($poddom !="none") {$price_poddom=1471;};
 }
 
 if ($dostavka<>"none"){
 	if ($dostavka<>"city"){
-		$price_dostavka=700+$km*30;
+		$price_dostavka=1000+$km*30;
 	}
 	else {
 		$price_dostavka=1000;
@@ -174,38 +181,39 @@ if ($dostavka<>"none"){
 }
 
 if ($upr == "reductor"){
-	$price_reductor=6517;
+	$price_reductor=7531;
+}
+
+if ($csx=="podves_cs1"){
+	$price_csx=0;
+	$price_csx_text="Телескопическое подвешение типа CS-1";
 }
 
 if ($csx=="podves_cs2"){
-	$price_csx=225;
+	$price_csx=260;
 	$price_csx_text="Телескопическое подвешение типа CS-2";
 }
 if ($csx=="podves_cs3"){
-	$price_csx=300;
+	$price_csx=347;
 	$price_csx_text="Телескопическое подвешение типа CS-3";
 }
 if ($csx=="podves_cs4"){
-	$price_csx=450;
+	$price_csx=520;
 	$price_csx_text="Телескопическое подвешение типа CS-4";
 }
 if ($csx=="podves_cs5"){
-	$price_csx=824;
+	$price_csx=952;
 	$price_csx_text="Телескопическое подвешение типа CS-5";
-}
-
-if ($windows !=0){
-	$price_windows=$windows*4147;
 }
 
 if ($aqua != "none") {
 	if ($height < 3000) {
-		$price_aqua = 14318;
+		$price_aqua = 16546;
 		//echo "!!!!!".$height."!!!!!";
 		// $price=$price+14318;
 	} else {
 		//echo "!!!!!".$height."!!!!!";
-		$price_aqua = 20499;
+		$price_aqua = 23689;
 		// $price=$price+20499;
 	}
 }
@@ -358,7 +366,7 @@ if ($aqua !="none") {
 }
 
 if ($zamok !="none") {
-	$price_zamok=5618;
+	$price_zamok=6492;
 	echo '<tr>';
 	echo '<td>';
 	echo "Стоимость ригельного замка";
@@ -394,8 +402,8 @@ if ($upr == "automatic") {
 	echo '<td>';
 	echo $price_automatic." руб.";
 	echo '</td>';
-	if ($door !="none"){
-		$price_automatic_dop=2850;
+	if ($upr_dop !="0"){
+		$price_automatic_dop=3100;
 		$price_automatic_dop_dicount=$price_automatic_dop*(1-$discount);
 		echo '<tr>';
 		echo '<td>';
@@ -436,6 +444,10 @@ if ($upr == "reductor") {
 	echo '</td>';
 	echo '<td>';
 	echo $price_reductor." руб.";
+	echo '</td>';
+	echo '<td>';
+	$price_reductor_discount=$price_reductor*(1-$discount);
+	echo $price_reductor_discount.' руб.';
 	echo '</td>';
 	echo '</tr>';
 }
@@ -559,6 +571,8 @@ if ($debugging){
 	//echo "Ширина =" . $csvdata [2];
 	//echo "<br>";
 	//echo "Высота =" . $csvdata [3];
+	echo "<br>";
+	echo 'upr_dop='.$upr_dop;
 	echo "<br>";
 	echo 'IP='; echo $ip;
 	echo '</div>';
